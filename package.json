@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/ice-lab/spec/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/ice-lab/spec#readme"
 }
