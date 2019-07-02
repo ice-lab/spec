@@ -1,0 +1,18 @@
+{
+  "name": "@ice/spec",
+  "version": "0.1.0",
+  "description": "eslint/stylelint/editorconfig",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ice-lab/spec.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ice-lab/spec/issues"
+  },
+  "homepage": "https://github.com/ice-lab/spec#readme"
+}
