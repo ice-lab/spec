@@ -1,0 +1,2 @@
+# spec
+eslint/stylelint/editorconfig 
