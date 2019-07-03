@@ -17,5 +17,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/ice-lab/spec#readme"
+  "homepage": "https://github.com/ice-lab/spec#readme",
+  "peerDependencies": {
+    "eslint": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2"
+  }
 }
