@@ -1,6 +1,6 @@
 # spec
 
-eslint/stylelint/...
+eslint/stylelint/prettier config.
 
 ## Features
 
@@ -12,10 +12,8 @@ eslint/stylelint/...
 ## Install
 
 ```bash
-$ npm i --save-dev @ice/spec
+$ npm i --save-dev @ice/spec eslint stylelint
 ```
-
-You don't need dep eslint/stylelint/eslin-plugin-*/... in your project.
 
 ## Usage
 
