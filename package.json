@@ -18,14 +18,23 @@
     "access": "public"
   },
   "homepage": "https://github.com/ice-lab/spec#readme",
-  "peerDependencies": {
+  "dependencies": {
+    "babel-eslint": "^10.0.2",
+    "deepmerge": "^3.3.0",
     "eslint": "^5.16.0",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
     "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
-    "eslint-plugin-react-hooks": "^1.6.1"
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-css-modules": "^1.4.0",
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.0",
+    "stylelint-scss": "^3.8.0"
   }
 }
