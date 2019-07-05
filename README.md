@@ -1,21 +1,28 @@
 # spec
 
-eslint/stylelint/...
+eslint/stylelint/prettier config.
+
+## Features
+
+- [x] eslint
+- [x] stylelint
+- [ ] prettier
+- [ ] eslint support TypeScript
 
 ## Install
 
-```
-$ npm i --save-dev @ice/spec
+```bash
+$ npm i --save-dev @ice/spec eslint stylelint
 ```
 
 ## Usage
 
 ### eslint
 
-in `.eslintrc.js`
+Create a `.eslintrc.js`
 
 ```js
-import { eslint } from '@ice/spec';
+const { eslint } = require('@ice/spec');
 
 module.exports = eslint;
 ```
@@ -25,17 +32,21 @@ module.exports = eslint;
 in `.stylelint.js`
 
 ```js
-import { stylelint } from '@ice/spec';
+const { stylelint } = require('@ice/spec');
 
 module.exports = stylelint;
 ```
 
-### prettier
+## FAQ
 
-in `.prettierrc.js`
+### Custom config
 
 ```js
-import { prettier } from '@ice/spec';
+const { eslint, deepmerge } = require('@ice/spec');
 
-module.exports = prettier;
+module.exports = deepmerge(eslint, {
+  rules: {
+    // custom config
+  },
+});
 ```
