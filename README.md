@@ -17,7 +17,7 @@ $ npm i --save-dev @ice/spec eslint stylelint
 
 ## Usage
 
-### eslint
+### eslint [rules](/lib/eslint.js) 
 
 Create a `.eslintrc.js`
 
@@ -27,7 +27,7 @@ const { eslint } = require('@ice/spec');
 module.exports = eslint;
 ```
 
-### stylelint
+### stylelint [rules](/lib/eslint.js) 
 
 in `.stylelint.js`
 
