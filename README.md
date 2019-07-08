@@ -7,7 +7,7 @@ eslint/stylelint/prettier config.
 - [x] eslint
 - [x] stylelint
 - [ ] prettier
-- [ ] eslint support TypeScript
+- [x] eslint support TypeScript
 
 ## Install
 
@@ -25,6 +25,16 @@ Create a `.eslintrc.js`
 const { eslint } = require('@ice/spec');
 
 module.exports = eslint;
+```
+
+### eslint support TypeScript [rules](/lib/eslintTS.js) 
+
+Create a `.eslintrc.js`
+
+```js
+const { eslintTS } = require('@ice/spec');
+
+module.exports = eslintTS;
 ```
 
 ### stylelint [rules](/lib/eslint.js) 
