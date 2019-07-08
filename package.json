@@ -34,5 +34,8 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-order": "^3.0.0",
     "stylelint-scss": "^3.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1"
   }
 }
