@@ -20,7 +20,7 @@
   "homepage": "https://github.com/ice-lab/spec#readme",
   "peerDependencies": {
     "typescript": "^3.0.0",
-    "eslint": "^5.0.0",
+    "eslint": ">=5.0.0",
     "stylelint": "^10.0.0"
   },
   "dependencies": {
@@ -40,5 +40,8 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-order": "^3.0.0",
     "stylelint-scss": "^3.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
   }
 }
