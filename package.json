@@ -1,6 +1,6 @@
 {
   "name": "@ice/spec",
-  "version": "0.1.4-beta.2",
+  "version": "0.1.4",
   "description": "eslint/stylelint/editorconfig",
   "main": "lib/index.js",
   "scripts": {
