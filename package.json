@@ -1,6 +1,6 @@
 {
   "name": "@ice/spec",
-  "version": "0.1.4-beta.1",
+  "version": "0.1.4",
   "description": "eslint/stylelint/editorconfig",
   "main": "lib/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/ice-lab/spec#readme",
   "peerDependencies": {
     "typescript": "^3.0.0",
-    "eslint": "^5.0.0",
+    "eslint": ">=5.0.0",
     "stylelint": "^10.0.0"
   },
   "dependencies": {
@@ -30,7 +30,6 @@
     "deepmerge": "^3.3.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
@@ -41,5 +40,8 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-order": "^3.0.0",
     "stylelint-scss": "^3.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
   }
 }
