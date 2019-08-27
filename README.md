@@ -1,6 +1,6 @@
 # spec
 
-Easy to use eslint/stylelint/prettier. spec means specification.
+Easy to use eslint/stylelint/prettier. And spec means specification.
 
 ## Features
 
