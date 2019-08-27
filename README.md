@@ -6,13 +6,14 @@ eslint/stylelint/prettier config.
 
 - [x] eslint
 - [x] stylelint
-- [ ] prettier
 - [x] eslint support TypeScript
+- [x] commitlint
+- [ ] prettier
 
 ## Install
 
 ```bash
-$ npm i --save-dev @ice/spec eslint stylelint
+$ npm i --save-dev @ice/spec eslint stylelint @commitlint/cli
 ```
 
 ## Usage
@@ -45,6 +46,16 @@ in `.stylelint.js`
 const { stylelint } = require('@ice/spec');
 
 module.exports = stylelint;
+```
+
+### commitlint [rules](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional)
+
+in `.commitlintrc.js`
+
+```js
+const { commitlint } = require('@ice/spec');
+
+module.exports = commitlint;
 ```
 
 ## FAQ
