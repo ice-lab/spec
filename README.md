@@ -1,6 +1,6 @@
 # spec
 
-eslint/stylelint/prettier config.
+Easy to use eslint/stylelint/prettier. spec means specification.
 
 ## Features
 
