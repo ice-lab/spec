@@ -3,8 +3,11 @@
   "version": "0.1.8",
   "description": "eslint/stylelint/editorconfig",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --cache --ext .ts,.tsx,.js,.jsx ./"
   },
   "repository": {
     "type": "git",
@@ -43,6 +46,8 @@
     "stylelint-scss": "^3.8.0"
   },
   "devDependencies": {
+    "eslint": "^6.7.1",
+    "stylelint": "^12.0.0",
     "typescript": "^3.5.3"
   }
 }

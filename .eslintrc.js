@@ -1,3 +1,3 @@
-const { eslintTS } = require('./lib/eslintTS');
+const { eslint } = require('./lib');
 
-module.exports = eslintTS;
+module.exports = eslint;
