@@ -1,3 +1,9 @@
-const { eslintTS } = require('./lib/eslintTS');
+const { eslint, deepmerge } = require('./lib');
 
-module.exports = eslintTS;
+const eslintConfig = deepmerge(eslint, {
+  env: {
+    jest: true
+  }
+});
+
+module.exports = eslintConfig;
