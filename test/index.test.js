@@ -34,3 +34,11 @@ it('parserOptions should be merged', () => {
   });
   expect(result.parserOptions.ecmaFeatures.jsx).toEqual(undefined);
 });
+
+it('plugins should be merged', () => {
+  const result = deepmerge(eslint, {
+    plugins: ['react-xxx'],
+  });
+  expect(result.plugins[0]).toEqual('react-hooks');
+  expect(result.plugins[1]).toEqual('react-xxx');
+});
