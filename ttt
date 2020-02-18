@@ -1,0 +1,7 @@
+peerDependencies link stylelint@9.10.1 in /Users/sobear/work/alib/materials/scaffolds/fusion-design-pro-js/node_modules/_stylelint-order@2.2.1@stylelint-order unmet with /Users/sobear/work/alib/materials/scaffolds/fusion-design-pro-js/node_modules/stylelint(10.1.0)
+peerDependencies WARNING @ice/spec@0.1.9 › eslint-config-airbnb@17.1.1 › eslint-config-airbnb-base@^13.2.0 requires a peer of eslint@^4.19.1 || ^5.3.0 but eslint@6.8.0 was installed
+peerDependencies WARNING @ice/spec@0.1.9 › eslint-config-airbnb@^17.1.1 requires a peer of eslint@^4.19.1 || ^5.3.0 but eslint@6.8.0 was installed
+peerDependencies WARNING @ice/spec@0.1.9 › @typescript-eslint/eslint-plugin@^1.11.0 requires a peer of eslint@^5.0.0 but eslint@6.8.0 was installed
+peerDependencies WARNING @ice/spec@0.1.9 › @typescript-eslint/parser@^1.11.0 requires a peer of eslint@^5.0.0 but eslint@6.8.0 was installed
+deprecate react-intl@2.9.0 › intl-relativeformat@^2.1.0 This package has been deprecated, please see migration guide at 'https://github.com/formatjs/formatjs/tree/master/packages/intl-relativeformat#migration-guide'
+deprecate stylelint@10.1.0 › postcss-markdown@0.36.0 › remark@10.0.1 › unified@7.1.0 › @types/vfile@3.0.2 › @types/vfile-message@* This is a stub types definition. vfile-message provides its own type definitions, so you do not need this installed.
