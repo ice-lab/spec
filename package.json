@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "lint": "eslint --cache --ext .ts,.tsx,.js,.jsx ./",
+    "stylelint": "stylelint ./**/*.css",
     "test": "jest",
     "coverage": "codecov",
     "prepublishOnly": "npm run lint && npm run test"
@@ -51,6 +52,7 @@
     "codecov": "^3.6.1",
     "eslint": "^6.7.1",
     "jest": "^24.9.0",
+    "prettier": "^1.19.1",
     "stylelint": "^13.2.0",
     "typescript": "^3.5.3"
   },
