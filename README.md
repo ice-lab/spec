@@ -10,7 +10,7 @@ Easy to use eslint/stylelint/prettier. And spec means specification.
 - [x] stylelint
 - [x] eslint support TypeScript
 - [x] commitlint
-- [ ] prettier
+- [x] prettier
 
 ## Install
 
@@ -42,12 +42,22 @@ module.exports = tslint;
 
 ### stylelint [rules](/lib/eslint.js)
 
-in `.stylelint.js`
+in `.stylelintrc.js`
 
 ```js
 const { stylelint } = require('@ice/spec');
 
 module.exports = stylelint;
+```
+
+### prettier [rules](/lib/prettier.js)
+
+in `.prettierrc.js`
+
+```js
+const { prettier } = require('@ice/spec');
+
+module.exports = prettier;
 ```
 
 ### commitlint [rules](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional)
@@ -77,3 +87,7 @@ module.exports = deepmerge(eslint, {
 ### Error: Cannot find module 'eslint-plugin-foo'
 
 Eslint is not yet supported having plugins as dependencies in shareable config. [issue](https://github.com/eslint/eslint/issues/3458). As a temporary solution, you need add the plugin to devDependencies in your project, like `npm i --save-dev eslint-plugin-jsx-a11y`.
+
+### Warning: incorrect peer dependency "eslint-plugin-react-hooks@^1.7.0"
+
+[issue](https://github.com/airbnb/javascript/issues/2084)
