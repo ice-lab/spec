@@ -3,11 +3,11 @@ const { deepmerge, eslint } = require('../lib');
 it('set one rule should be replaced', () => {
   const result = deepmerge(eslint, {
     rules: {
-      "comma-dangle": [1, "never"],
+      'comma-dangle': [1, 'never'],
     },
   });
 
-  expect(result.rules['comma-dangle']).toEqual([1, "never"]);
+  expect(result.rules['comma-dangle']).toEqual([1, 'never']);
 });
 
 it('root should be replaced', () => {

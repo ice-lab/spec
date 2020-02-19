@@ -20,8 +20,10 @@ module.exports = () => {
   console.log(222);
 
   const b = {
-    a: 1
+    'a': 1,
+    'b': 1,
   };
+  const c = 'xxxx';
   console.log(b);
 
   if (foo) {
@@ -32,6 +34,4 @@ module.exports = () => {
     bar();
     baz();
   }
-
-  const c = 1;
 };
