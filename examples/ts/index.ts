@@ -1,5 +1,5 @@
 const a = 1;
 
-export default {
-
+export default () => {
+  const b = 2;
 }
