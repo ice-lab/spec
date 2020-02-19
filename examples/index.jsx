@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 let actions;
 
-const zh_CN = 'xxx';
-
 function A() {
   const a = 1;
   switch (a) {
