@@ -42,3 +42,14 @@ it('plugins should be merged', () => {
   expect(result.plugins[0]).toEqual('react-hooks');
   expect(result.plugins[1]).toEqual('react-xxx');
 });
+
+it('new attributes should be merged', () => {
+  const result = deepmerge(eslint, {
+    newAttribute1: ['xxxx-val1'],
+    newAttribute2: { a: 'xxxx-val2' },
+    newAttribute3: 'xxxx-val3'
+  });
+  expect(result.newAttribute1[0]).toEqual('xxxx-val1');
+  expect(result.newAttribute2.a).toEqual('xxxx-val2');
+  expect(result.newAttribute3).toEqual('xxxx-val3');
+});
