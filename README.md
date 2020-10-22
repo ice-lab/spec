@@ -20,7 +20,7 @@ First create a `.eslintrc.js` file. Then edit your config.
 
 ##### JavaScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
 
-[rules]() base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
+[rules](./src/eslint/ice.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
 
 ```js
 // .eslintrc.js
@@ -32,7 +32,7 @@ module.exports = getESLintConfig('ice');
 
 ##### TypeScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
 
-[rules]() base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
+[rules](./src/eslint/ice-ts.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
 
 ```js
 // .eslintrc.js
@@ -50,7 +50,7 @@ First create a `.stylelintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules]() base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
+[rules](./src/stylelint/ice.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
 
 ```js
 // .stylelintrc.js
@@ -60,7 +60,7 @@ const { getStylelintConfig } = require('@iceworks/spec');
 module.exports = getStylelintConfig('ice');
 ```
 
-### prettier [rules]() 
+### prettier [rules](./src/prettier/ice.js) 
 
 #### 1. Create configuration file
 
@@ -84,7 +84,7 @@ First create a `.commitlintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules]() base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
+[rules](./src/commitlint/ice.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
 
 ```js
 // .commitlintrc.js
