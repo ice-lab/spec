@@ -1,48 +1,50 @@
-const { getESLintConfig } = require('../src');
+const {
+  getESLintConfig,
+  getStylelintConfig,
+  getPrettierConfig
+} = require('../src');
 
-console.log(getESLintConfig('rax', { s: 1 }));
-
-/*
-it('set one rule should be replaced', () => {
-  const result = deepmerge(eslint, {
+it('getESLintConfig set one rule should be replaced', () => {
+  const result = getESLintConfig('ice', {
     rules: {
-      'comma-dangle': [1, 'never'],
-    },
+      'comma-dangle': [1, 'never']
+    }
   });
 
   expect(result.rules['comma-dangle']).toEqual([1, 'never']);
 });
 
-it('root should be replaced', () => {
-  const result = deepmerge(eslint, {
-    root: false,
-  });
-
-  expect(result.root).toEqual(false);
-});
-
-it('parserOptions should be merged', () => {
-  const result = deepmerge(eslint, {
+it('getESLintConfig parserOptions should be merged', () => {
+  const result = getESLintConfig('rax', {
     parserOptions: {
       ecmaVersion: 2017,
       ecmaFeatures: {
-        js: true,
-      },
-    },
+        js: true
+      }
+    }
   });
 
   expect(result.parserOptions.ecmaVersion).toEqual(2017);
   expect(result.parserOptions.ecmaFeatures).toEqual({
-    js: true,
+    js: true
   });
   expect(result.parserOptions.ecmaFeatures.jsx).toEqual(undefined);
 });
 
-it('plugins should be merged', () => {
-  const result = deepmerge(eslint, {
-    plugins: ['react-xxx'],
+it('getStylelintConfig rules should be merged', () => {
+  const result = getStylelintConfig('ice', {
+    rules: {
+      'block-no-empty': null
+    }
   });
-  expect(result.plugins[0]).toEqual('react-hooks');
-  expect(result.plugins[1]).toEqual('react-xxx');
+
+  expect(result.rules['block-no-empty']).toEqual(null);
 });
-*/
+
+it('getPrettierConfig tabWidth should be replaced', () => {
+  const result = getPrettierConfig('ice', {
+    tabWidth: 4
+  });
+
+  expect(result.tabWidth).toEqual(4);
+});

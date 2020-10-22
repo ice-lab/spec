@@ -1,5 +1,7 @@
 const deepmerge = require('./deepmerge');
 const eslint = require('requireindex')(`${__dirname}/eslint`);
+const stylelint = require('requireindex')(`${__dirname}/stylelint`);
+const prettier = require('requireindex')(`${__dirname}/prettier`);
 
 function getConfig(configs, rule, customConfig) {
   if (!configs[rule]) {
@@ -10,15 +12,16 @@ function getConfig(configs, rule, customConfig) {
 }
 
 // ESLint
-exports.getESLintConfig = function (rule, customConfig) {
+exports.getESLintConfig = function(rule, customConfig) {
   return getConfig(eslint, rule, customConfig);
 };
 
 // stylelint
-exports.getStylelintConfig = function (rule, customConfig) {
-  // rax ice and react is same
-  // https://www.npmjs.com/package/stylelint-config-ali
-  return deepmerge({
-    extends: 'stylelint-config-ali',
-  }, customConfig || {});
+exports.getStylelintConfig = function(rule, customConfig) {
+  return getConfig(stylelint, rule, customConfig);
+};
+
+// prettier
+exports.getPrettierConfig = function(rule, customConfig) {
+  return getConfig(prettier, rule, customConfig);
 };

@@ -1,8 +1,8 @@
-module.exports = function (target, source) {
+module.exports = function(target, source) {
   // deep clone
   const newObj = JSON.parse(JSON.stringify(target));
 
-  Object.keys(source).forEach((key) => {
+  Object.keys(source).forEach(key => {
     const type = Object.prototype.toString.call(source[key]);
 
     if (type === '[object Array]') {

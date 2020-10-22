@@ -13,9 +13,9 @@
     "eslint-ice": "eslint -c .eslintrc.ice.js --ext .js,.jsx ./examples/ice/",
     "eslint-ice-ts": "eslint -c .eslintrc.ice-ts.js --ext .ts,.tsx ./examples/ice-ts/",
     "stylelint": "stylelint ./**/*.{css,scss}",
-    
+    "prettier": "prettier **/* --write",
     "lint": "eslint --ext .js ./src --fix && npm run eslint && npm run stylelint",
-    "test": "jest",
+    "test": "npm run lint && npm run prettier && jest",
     "coverage": "codecov",
     "prepublishOnly": "npm run lint && npm run test"
   },
@@ -31,9 +31,7 @@
   },
   "homepage": "https://github.com/ice-lab/iceworks#readme",
   "peerDependencies": {
-    "typescript": "^3.0.0",
-    "eslint": "^6.8.0",
-    "stylelint": "^13.2.0"
+    "eslint": "^6.8.0"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.5.0",
