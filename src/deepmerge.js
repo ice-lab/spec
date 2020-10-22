@@ -1,4 +1,4 @@
-module.exports = function(target, source) {
+module.exports = function (target, source) {
   // deep clone
   const newObj = JSON.parse(JSON.stringify(target));
 
@@ -8,7 +8,7 @@ module.exports = function(target, source) {
     if (type === '[object Array]') {
       newObj[key] = [...target[key], ...source[key]];
     } else if (type === '[object Object]') {
-      newObj[key] = {...target[key], ...source[key]};
+      newObj[key] = { ...target[key], ...source[key] };
     } else {
       newObj[key] = source[key];
     }

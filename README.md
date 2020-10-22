@@ -1,73 +1,97 @@
-# spec
+# @iceworks/spec
 
-[![NPM version](https://img.shields.io/npm/v/@ice/spec.svg?style=flat)](https://npmjs.org/package/@ice/spec) [![build status](https://img.shields.io/travis/com/ice-lab/spec.svg?style=flat-square)](https://travis-ci.com/ice-lab/spec) [![Test coverage](https://img.shields.io/codecov/c/github/ice-lab/spec.svg?style=flat-square)](https://codecov.io/gh/ice-lab/spec) [![NPM downloads](http://img.shields.io/npm/dm/@ice/spec.svg?style=flat)](https://npmjs.org/package/@ice/spec) [![David deps](https://img.shields.io/david/ice-lab/spec.svg?style=flat-square)](https://david-dm.org/ice-lab/spec)
-
-Easy to use eslint/stylelint/prettier. And spec means specification.
-
-## Features
-
-- [x] eslint
-- [x] stylelint
-- [x] eslint support TypeScript
-- [x] commitlint
-- [x] prettier
+Easy to use **eslint**(support TypeScript) / **stylelint** / **prettier** / **commitlint** in [rax](https://rax.js.org/), [ice](https://ice.work/) and react project. And spec means specification.
 
 ## Install
 
 ```bash
-$ npm i --save-dev @ice/spec eslint stylelint @commitlint/cli
+$ npm i --save-dev @iceworks/spec eslint stylelint prettier @commitlint/cli
 ```
 
 ## Usage
 
-### eslint [rules](/lib/eslint.js)
+### ESLint
 
-Create a `.eslintrc.js`
+#### 1. Create configuration file
+
+First create a `.eslintrc.js` file. Then edit your config.
+
+#### 2. Update config
+
+##### JavaScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
+
+[rules]() base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
 
 ```js
-const { eslint } = require('@ice/spec');
+// .eslintrc.js
+const { getESLintConfig } = require('@iceworks/spec');
 
-module.exports = eslint;
+// getESLintConfig(rule: 'rax'|'ice', customConfig?);
+module.exports = getESLintConfig('ice');
 ```
 
-### eslint support TypeScript [rules](/lib/tslint.js)
+##### TypeScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
 
-Create a `.eslintrc.js`
+[rules]() base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
 
 ```js
-const { tslint } = require('@ice/spec');
+// .eslintrc.js
+const { getESLintConfig } = require('@iceworks/spec');
 
-module.exports = tslint;
+// getESLintConfig(rule: 'rax-ts'|'ice-ts', customConfig?);
+module.exports = getESLintConfig('ice-ts');
 ```
 
-### stylelint [rules](/lib/eslint.js)
+### stylelint
 
-in `.stylelintrc.js`
+#### 1. Create configuration file
+
+First create a `.stylelintrc.js` file. Then edit your config.
+
+#### 2. Update config
+
+[rules]() base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
 
 ```js
-const { stylelint } = require('@ice/spec');
+// .stylelintrc.js
+const { getStylelintConfig } = require('@iceworks/spec');
 
-module.exports = stylelint;
+// getStylelintConfig(rule: 'rax'|'ice', customConfig?);
+module.exports = getStylelintConfig('ice');
 ```
 
-### prettier [rules](/lib/prettier.js)
+### prettier [rules]() 
 
-in `.prettierrc.js`
+#### 1. Create configuration file
+
+First create a `.prettierrc.js` file. Then edit your config.
+
+#### 2. Update config
 
 ```js
-const { prettier } = require('@ice/spec');
+// .prettierrc.js
+const { getPrettierConfig } = require('@iceworks/spec');
 
-module.exports = prettier;
+// getPrettierConfig(rule: 'rax'|'ice', customConfig?);
+module.exports = getPrettierConfig('ice');
 ```
 
-### commitlint [rules](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional)
+### commitlint 
 
-in `.commitlintrc.js`
+#### 1. Create configuration file
+
+First create a `.commitlintrc.js` file. Then edit your config.
+
+#### 2. Update config
+
+[rules]() base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
 
 ```js
-const { commitlint } = require('@ice/spec');
+// .commitlintrc.js
+const { getCommitlintConfig } = require('@iceworks/spec');
 
-module.exports = commitlint;
+// getCommitlintConfig(rule: 'rax'|'ice', customConfig?);
+module.exports = getCommitlintConfig('ice');
 ```
 
 ## FAQ
@@ -75,11 +99,14 @@ module.exports = commitlint;
 ### Custom config
 
 ```js
-const { eslint, deepmerge } = require('@ice/spec');
+// .eslintrc.js
+const { getESLintConfig } = require('@iceworks/spec');
 
-module.exports = deepmerge(eslint, {
+// getESLintConfig(rule: 'rax'|'ice', customConfig?);
+module.exports = getESLintConfig('rax', {
+  // custom config it will merge into main config
   rules: {
-    // custom config
+    // ...
   },
 });
 ```
@@ -88,6 +115,4 @@ module.exports = deepmerge(eslint, {
 
 Eslint is not yet supported having plugins as dependencies in shareable config. [issue](https://github.com/eslint/eslint/issues/3458). As a temporary solution, you need add the plugin to devDependencies in your project, like `npm i --save-dev eslint-plugin-jsx-a11y`.
 
-### Warning: incorrect peer dependency "eslint-plugin-react-hooks@^1.7.0"
-
-[issue](https://github.com/airbnb/javascript/issues/2084)
+Enjoy!

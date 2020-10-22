@@ -1,56 +1,55 @@
 {
-  "name": "@ice/spec",
-  "version": "1.0.1",
-  "description": "eslint/stylelint/editorconfig",
-  "main": "lib/index.js",
+  "name": "@iceworks/spec",
+  "version": "0.1.0",
+  "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
+  "main": "src/index.js",
   "files": [
-    "lib"
+    "src"
   ],
   "scripts": {
-    "lint": "eslint --cache --ext .ts,.tsx,.js,.jsx ./",
-    "stylelint": "stylelint ./**/*.css",
+    "eslint": "npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-ice && npm run eslint-ice-ts",
+    "eslint-rax": "eslint -c .eslintrc.rax.js --ext .js,.jsx ./examples/rax/",
+    "eslint-rax-ts": "eslint -c .eslintrc.rax-ts.js --ext .ts,.tsx ./examples/rax-ts/",
+    "eslint-ice": "eslint -c .eslintrc.ice.js --ext .js,.jsx ./examples/ice/",
+    "eslint-ice-ts": "eslint -c .eslintrc.ice-ts.js --ext .ts,.tsx ./examples/ice-ts/",
+    "stylelint": "stylelint ./**/*.{css,scss}",
+    
+    "lint": "eslint --ext .js ./src --fix && npm run eslint && npm run stylelint",
     "test": "jest",
     "coverage": "codecov",
     "prepublishOnly": "npm run lint && npm run test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ice-lab/spec.git"
+    "url": "git+https://github.com/ice-lab/iceworks.git"
   },
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ice-lab/spec/issues"
+    "url": "https://github.com/ice-lab/iceworks/issues"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/ice-lab/spec#readme",
+  "homepage": "https://github.com/ice-lab/iceworks#readme",
   "peerDependencies": {
     "typescript": "^3.0.0",
-    "eslint": ">=5.0.0",
-    "stylelint": ">=10.0.0"
+    "eslint": "^6.8.0",
+    "stylelint": "^13.2.0"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^8.1.0",
-    "@typescript-eslint/eslint-plugin": "^2.20.0",
-    "@typescript-eslint/parser": "^2.20.0",
-    "babel-eslint": "^10.0.2",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.2",
-    "eslint-plugin-react-hooks": "^2.4.0",
-    "stylelint-config-css-modules": "^2.2.0",
-    "stylelint-config-prettier": "^8.0.1",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-order": "^4.0.0",
-    "stylelint-scss": "^3.14.2"
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-ali": "^11.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "requireindex": "^1.2.0",
+    "stylelint-config-ali": "^0.3.4",
+    "stylelint-scss": "^3.18.0"
   },
   "devDependencies": {
     "codecov": "^3.6.1",
-    "eslint": "^6.7.1",
+    "eslint": "^6.8.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",

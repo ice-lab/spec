@@ -1,5 +1,8 @@
-const { deepmerge, eslint } = require('../lib');
+const { getESLintConfig } = require('../src');
 
+console.log(getESLintConfig('rax', { s: 1 }));
+
+/*
 it('set one rule should be replaced', () => {
   const result = deepmerge(eslint, {
     rules: {
@@ -42,3 +45,4 @@ it('plugins should be merged', () => {
   expect(result.plugins[0]).toEqual('react-hooks');
   expect(result.plugins[1]).toEqual('react-xxx');
 });
+*/

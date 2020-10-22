@@ -1,4 +1,3 @@
-const { stylelint, deepmerge } = require('./lib');
+const { getStylelintConfig } = require('./src');
 
-module.exports = deepmerge(stylelint, {
-});
+module.exports = getStylelintConfig('ice');
