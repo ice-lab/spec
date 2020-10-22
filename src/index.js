@@ -2,6 +2,7 @@ const deepmerge = require('./deepmerge');
 const eslint = require('requireindex')(`${__dirname}/eslint`);
 const stylelint = require('requireindex')(`${__dirname}/stylelint`);
 const prettier = require('requireindex')(`${__dirname}/prettier`);
+const commitlint = require('requireindex')(`${__dirname}/commitlint`);
 
 function getConfig(configs, rule, customConfig) {
   if (!configs[rule]) {
@@ -24,4 +25,9 @@ exports.getStylelintConfig = function(rule, customConfig) {
 // prettier
 exports.getPrettierConfig = function(rule, customConfig) {
   return getConfig(prettier, rule, customConfig);
+};
+
+// commitlint
+exports.getCommitlintConfig = function(rule, customConfig) {
+  return getConfig(commitlint, rule, customConfig);
 };
