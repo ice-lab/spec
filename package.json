@@ -7,14 +7,15 @@
     "src"
   ],
   "scripts": {
-    "eslint": "npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-ice && npm run eslint-ice-ts",
+    "eslint": "eslint --ext .js ./src",
+    "eslint-test": "npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-ice && npm run eslint-ice-ts",
     "eslint-rax": "eslint -c .eslintrc.rax.js --ext .js,.jsx ./examples/rax/",
     "eslint-rax-ts": "eslint -c .eslintrc.rax-ts.js --ext .ts,.tsx ./examples/rax-ts/",
     "eslint-ice": "eslint -c .eslintrc.ice.js --ext .js,.jsx ./examples/ice/",
     "eslint-ice-ts": "eslint -c .eslintrc.ice-ts.js --ext .ts,.tsx ./examples/ice-ts/",
     "stylelint": "stylelint ./**/*.{css,scss}",
     "prettier": "prettier **/* --write",
-    "lint": "eslint --ext .js ./src --fix && npm run eslint && npm run stylelint",
+    "lint": "npm run eslint && npm run eslint-test && npm run stylelint",
     "test": "npm run lint && npm run prettier && jest",
     "coverage": "codecov",
     "prepublishOnly": "npm run lint && npm run test"
@@ -50,6 +51,7 @@
     "@commitlint/cli": "^11.0.0",
     "codecov": "^3.6.1",
     "eslint": "^6.8.0",
+    "husky": "^4.3.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
