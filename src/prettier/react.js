@@ -1,5 +1,8 @@
-// prettier config for rax project
+// prettier config for ice and react project
 module.exports = {
+  printWidth: 100,
+  tabWidth: 2,
+  semi: true,
   singleQuote: true,
-  bracketSpacing: true,
+  trailingComma: 'all',
 };

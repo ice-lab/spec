@@ -1,4 +1,4 @@
-// prettier config for ice and react project
+// prettier config for rax project
 module.exports = {
   printWidth: 100,
   tabWidth: 2,

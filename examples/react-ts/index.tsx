@@ -108,15 +108,12 @@ const AppList = () => {
   const [zebraStatus, changeZebra] = useState(false);
 
   // 切换全屏
-  const [, { toggleFull }] = useFullscreen(
-    document.getElementById('table-container'),
-    {
-      onFull: () => {
-        const ele = document.getElementById('table-container');
-        ele.setAttribute('style', 'padding: 20px;background: #ffffff');
-      },
-    }
-  );
+  const [, { toggleFull }] = useFullscreen(document.getElementById('table-container'), {
+    onFull: () => {
+      const ele = document.getElementById('table-container');
+      ele.setAttribute('style', 'padding: 20px;background: #ffffff');
+    },
+  });
 
   // 获取表格数据
   const { paginationProps, tableProps } = useFusionTable(getTableData, {});
@@ -129,18 +126,11 @@ const AppList = () => {
       <Card.Content>
         <div className={styles.actionBar}>
           <div className={styles.buttonGroup}>
-            <Button
-              type="primary"
-              onClick={() => Message.success('已批量处理xx条数据')}
-            >
+            <Button type="primary" onClick={() => Message.success('已批量处理xx条数据')}>
               批量提交
             </Button>
-            <Button onClick={() => Message.success('已批量处理xx条数据')}>
-              批量删除
-            </Button>
-            <Button onClick={() => Message.success('已批量处理xx条数据')}>
-              批量下载
-            </Button>
+            <Button onClick={() => Message.success('已批量处理xx条数据')}>批量删除</Button>
+            <Button onClick={() => Message.success('已批量处理xx条数据')}>批量下载</Button>
           </div>
           <div className={styles.rightButtonGroup}>
             <Button text onClick={autoChangeSize}>
@@ -155,12 +145,7 @@ const AppList = () => {
             <CustomList columns={columns} onChange={onColumnChange} />
           </div>
         </div>
-        <Table
-          {...tableProps}
-          size={sizeStatus}
-          isZebra={zebraStatus}
-          primaryKey="id.value"
-        >
+        <Table {...tableProps} size={sizeStatus} isZebra={zebraStatus} primaryKey="id.value">
           {filterColumns(columns)}
         </Table>
         <Pagination

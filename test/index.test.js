@@ -1,8 +1,4 @@
-const {
-  getESLintConfig,
-  getStylelintConfig,
-  getPrettierConfig,
-} = require('../src');
+const { getESLintConfig, getStylelintConfig, getPrettierConfig } = require('../src');
 
 it('getESLintConfig set one rule should be replaced', () => {
   const result = getESLintConfig('react', {
