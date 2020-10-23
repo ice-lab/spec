@@ -11,6 +11,7 @@
     "commitlint-config-ali": "^0.1.0",
     "eslint": "^6.8.0",
     "husky": "^4.3.0",
+    "ice-npm-utils": "^2.0.1",
     "jest": "^24.9.0",
     "lerna": "^3.18.2",
     "prettier": "^2.1.0",
@@ -18,10 +19,12 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "setup": "lerna bootstrap --no-ci",
-    "eslint": "eslint --ext .js,ts ./  --resolve-plugins-relative-to ./packages/spec",
+    "setup": "lerna bootstrap --no-ci && lerna link",
+    "lint": "eslint --ext .js,ts ./ --resolve-plugins-relative-to ./packages/spec",
     "prettier": "prettier **/* --write",
-    "test": "jest"
+    "test": "jest",
+    "publish": "node ./scripts/publish",
+    "ci": "npm run lint && npm run setup && npm run test"
   },
   "husky": {
     "hooks": {

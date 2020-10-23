@@ -3,28 +3,13 @@ name: ci
 on: [push]
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: |
-          npm run setup:packages
-          npm run dependency:check
-          npm run test
-          npm run coverage
-        env:
-          ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-          ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          fail_ci_if_error: true
+          node-version: 10
+          registry-url: https://registry.npmjs.org/
+      - run: npm i
+      - run: npm run ci
