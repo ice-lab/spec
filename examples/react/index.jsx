@@ -14,10 +14,14 @@ const PageHeader = (props) => {
         </Breadcrumb>
       ) : null}
 
-      {title && <Typography.Text className={styles.Title}>{title}</Typography.Text>}
+      {title && (
+        <Typography.Text className={styles.Title}>{title}</Typography.Text>
+      )}
 
       {description && (
-        <Typography.Text className={styles.Description}>{description}</Typography.Text>
+        <Typography.Text className={styles.Description}>
+          {description}
+        </Typography.Text>
       )}
     </Box>
   );

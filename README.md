@@ -20,26 +20,26 @@ First create a `.eslintrc.js` file. Then edit your config.
 
 ##### JavaScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
 
-[rules](./src/eslint/ice.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
+[rules](./src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
 
 ```js
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'ice', customConfig?);
-module.exports = getESLintConfig('ice');
+// getESLintConfig(rule: 'rax'|'react', customConfig?);
+module.exports = getESLintConfig('react');
 ```
 
 ##### TypeScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
 
-[rules](./src/eslint/ice-ts.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
+[rules](./src/eslint/react-ts.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
 
 ```js
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax-ts'|'ice-ts', customConfig?);
-module.exports = getESLintConfig('ice-ts');
+// getESLintConfig(rule: 'rax-ts'|'react-ts', customConfig?);
+module.exports = getESLintConfig('react-ts');
 ```
 
 ### stylelint
@@ -50,17 +50,17 @@ First create a `.stylelintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./src/stylelint/ice.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
+[rules](./src/stylelint/react.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
 
 ```js
 // .stylelintrc.js
 const { getStylelintConfig } = require('@iceworks/spec');
 
-// getStylelintConfig(rule: 'rax'|'ice', customConfig?);
-module.exports = getStylelintConfig('ice');
+// getStylelintConfig(rule: 'rax'|'react', customConfig?);
+module.exports = getStylelintConfig('react');
 ```
 
-### prettier [rules](./src/prettier/ice.js) 
+### prettier [rules](./src/prettier/react.js) 
 
 #### 1. Create configuration file
 
@@ -72,8 +72,8 @@ First create a `.prettierrc.js` file. Then edit your config.
 // .prettierrc.js
 const { getPrettierConfig } = require('@iceworks/spec');
 
-// getPrettierConfig(rule: 'rax'|'ice', customConfig?);
-module.exports = getPrettierConfig('ice');
+// getPrettierConfig(rule: 'rax'|'react', customConfig?);
+module.exports = getPrettierConfig('react');
 ```
 
 ### commitlint 
@@ -84,14 +84,14 @@ First create a `.commitlintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./src/commitlint/ice.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
+[rules](./src/commitlint/react.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
 
 ```js
 // .commitlintrc.js
 const { getCommitlintConfig } = require('@iceworks/spec');
 
-// getCommitlintConfig(rule: 'rax'|'ice', customConfig?);
-module.exports = getCommitlintConfig('ice');
+// getCommitlintConfig(rule: 'rax'|'react', customConfig?);
+module.exports = getCommitlintConfig('react');
 ```
 
 ## FAQ
@@ -102,7 +102,7 @@ module.exports = getCommitlintConfig('ice');
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'ice', customConfig?);
+// getESLintConfig(rule: 'rax'|'react', customConfig?);
 module.exports = getESLintConfig('rax', {
   // custom config it will merge into main config
   rules: {

@@ -1,6 +1,6 @@
 const { getESLintConfig } = require('./src');
 
-module.exports = getESLintConfig('ice', {
+module.exports = getESLintConfig('react', {
   env: {
     jest: true
   }

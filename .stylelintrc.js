@@ -1,3 +1,3 @@
 const { getStylelintConfig } = require('./src');
 
-module.exports = getStylelintConfig('ice');
+module.exports = getStylelintConfig('react');

@@ -1,7 +1,11 @@
-const { getESLintConfig, getStylelintConfig, getPrettierConfig } = require('../src');
+const {
+  getESLintConfig,
+  getStylelintConfig,
+  getPrettierConfig,
+} = require('../src');
 
 it('getESLintConfig set one rule should be replaced', () => {
-  const result = getESLintConfig('ice', {
+  const result = getESLintConfig('react', {
     rules: {
       'comma-dangle': [1, 'never'],
     },
@@ -28,7 +32,7 @@ it('getESLintConfig parserOptions should be merged', () => {
 });
 
 it('getStylelintConfig rules should be merged', () => {
-  const result = getStylelintConfig('ice', {
+  const result = getStylelintConfig('react', {
     rules: {
       'block-no-empty': null,
     },
@@ -38,9 +42,21 @@ it('getStylelintConfig rules should be merged', () => {
 });
 
 it('getPrettierConfig tabWidth should be replaced', () => {
-  const result = getPrettierConfig('ice', {
+  const result = getPrettierConfig('react', {
     tabWidth: 4,
   });
 
   expect(result.tabWidth).toEqual(4);
+});
+
+it('new attributes should be merged', () => {
+  const result = getESLintConfig('react', {
+    newAttribute1: ['xxxx-val1'],
+    newAttribute2: { a: 'xxxx-val2' },
+    newAttribute3: 'xxxx-val3',
+  });
+
+  expect(result.newAttribute1[0]).toEqual('xxxx-val1');
+  expect(result.newAttribute2.a).toEqual('xxxx-val2');
+  expect(result.newAttribute3).toEqual('xxxx-val3');
 });

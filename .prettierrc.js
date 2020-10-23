@@ -1,3 +1,3 @@
 const { getPrettierConfig } = require('./src');
 
-module.exports = getPrettierConfig('ice');
+module.exports = getPrettierConfig('react');
