@@ -1,4 +1,4 @@
-const { getESLintConfig } = require('./src');
+const { getESLintConfig } = require('./packages/spec/src/');
 
 module.exports = getESLintConfig('react', {
   env: {

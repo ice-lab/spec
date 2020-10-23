@@ -1,0 +1,56 @@
+{
+  "name": "@iceworks/spec",
+  "version": "0.1.0",
+  "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "eslint-rax": "eslint -c .eslintrc.rax.js --ext .js,.jsx ./examples/rax/",
+    "eslint-rax-ts": "eslint -c .eslintrc.rax-ts.js --ext .ts,.tsx ./examples/rax-ts/",
+    "eslint-react": "eslint -c .eslintrc.react.js --ext .js,.jsx ./examples/react/",
+    "eslint-react-ts": "eslint -c .eslintrc.react-ts.js --ext .ts,.tsx ./examples/react-ts/",
+    "eslint-test": "npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-react && npm run eslint-react-ts",
+    "stylelin-test": "stylelint ./**/*.{css,scss}",
+    "test": "npm run eslint-test && npm run stylelin-test",
+    "prepublishOnly": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ice-lab/iceworks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ice-lab/iceworks/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/ice-lab/iceworks#readme",
+  "peerDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "babel-eslint": "^10.1.0",
+    "commitlint-config-ali": "^0.1.0",
+    "eslint-config-ali": "^11.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "requireindex": "^1.2.0",
+    "stylelint-config-ali": "^0.3.4",
+    "stylelint-scss": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "prettier": "^2.1.0",
+    "rax": "^1.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "stylelint": "^13.2.0",
+    "typescript": "^3.5.3"
+  }
+}
