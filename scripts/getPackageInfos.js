@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { existsSync, readdirSync, readFileSync } = require('fs');
 const { join } = require('path');
 const { getLatestVersion } = require('ice-npm-utils');

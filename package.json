@@ -20,9 +20,9 @@
   },
   "scripts": {
     "setup": "lerna bootstrap --no-ci && lerna link",
-    "lint": "eslint --ext .js,ts ./ --resolve-plugins-relative-to ./packages/spec",
+    "lint": "eslint --fix --ext .js,ts ./ --resolve-plugins-relative-to ./packages/spec",
     "prettier": "prettier **/* --write",
-    "test": "jest",
+    "test": "jest && cd packages/spec && npm run test",
     "publish": "node ./scripts/publish",
     "ci": "npm run setup && npm run lint && npm run test"
   },

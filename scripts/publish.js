@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * Scripts to check unpublished version and run publish
  */
