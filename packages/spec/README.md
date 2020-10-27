@@ -115,4 +115,14 @@ module.exports = getESLintConfig('rax', {
 
 Eslint is not yet supported having plugins as dependencies in shareable config. [issue](https://github.com/eslint/eslint/issues/3458). As a temporary solution, you need add the plugin to devDependencies in your project, like `npm i --save-dev eslint-plugin-jsx-a11y`.
 
+### Error: The file does not match your project config
+
+TypeScript project run lint file when see this error, you can update your `tsconfig.json`
+
+```json
+{
+  "include": ["src/*"] // update to "include": ["src/**/*"]
+}
+```
+
 Enjoy!

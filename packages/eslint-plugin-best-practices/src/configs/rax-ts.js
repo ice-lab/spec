@@ -1,6 +1,7 @@
 const commonConfig = require('./common');
+const deepmerge = require('../deepmerge');
 
-module.exports = Object.assign({}, commonConfig, {
+module.exports = deepmerge(commonConfig, {
   rules: {
     'no-plusplus': 'off',
   },
