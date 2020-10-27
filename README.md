@@ -8,6 +8,8 @@ Easy to use **eslint**(support TypeScript) / **stylelint** / **prettier** / **co
 $ npm i --save-dev @iceworks/spec eslint stylelint prettier @commitlint/cli
 ```
 
+PS: You don't need to install other eslint plugins and parsers.
+
 ## Usage
 
 ### ESLint
