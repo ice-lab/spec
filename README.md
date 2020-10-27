@@ -18,7 +18,7 @@ First create a `.eslintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
+[rules](./src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
 
 ```js
 // .eslintrc.js
