@@ -32,7 +32,7 @@ module.exports = getESLintConfig('react');
 
 ##### TypeScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
 
-[rules](./src/eslint/react-ts.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali).
+[rules](./src/eslint/react-ts.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
 
 ```js
 // .eslintrc.js
