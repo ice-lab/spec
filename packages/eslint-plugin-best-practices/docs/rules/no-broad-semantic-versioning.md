@@ -1,6 +1,6 @@
 # no-broad-semantic-versioning
 
-package.json is not recommended to use *, x and > x in a wide range of semantic versioning.
+package.json is not recommended to use \*, x and > x in a wide range of semantic versioning.
 
 ## Rule Details
 

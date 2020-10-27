@@ -10,7 +10,7 @@ Examples of **incorrect** code for this rule:
 ```jsx
 // src/components/app/index.jsx
 const app = () => {
-  return (<p>hello world</p>);
+  return <p>hello world</p>;
 };
 
 export default app;
@@ -21,7 +21,7 @@ Examples of **correct** code for this rule:
 ```jsx
 // src/components/App/index.jsx
 const App = () => {
-  return (<p>hello world</p>);
+  return <p>hello world</p>;
 };
 
 export default App;

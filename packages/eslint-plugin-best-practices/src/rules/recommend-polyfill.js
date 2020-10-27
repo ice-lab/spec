@@ -39,7 +39,8 @@ module.exports = {
     },
     fixable: null,
     messages: {
-      recommendPolyfill: 'It is recommended to add polyfill for "{{object}}.{{property}}" in "{{browser}}"',
+      recommendPolyfill:
+        'It is recommended to add polyfill for "{{object}}.{{property}}" in "{{browser}}"',
     },
   },
 
@@ -58,7 +59,12 @@ module.exports = {
           const supports = target.__compat.support;
           for (let i = 0, l = Object.keys(targetBrowsers).length; i < l; i++) {
             const browser = Object.keys(targetBrowsers)[i];
-            if (semver.satisfies(`${targetBrowsers[browser] }.0.0`, `<${supports[browser].version_added}`)) {
+            if (
+              semver.satisfies(
+                `${targetBrowsers[browser]}.0.0`,
+                `<${supports[browser].version_added}`,
+              )
+            ) {
               context.report({
                 node,
                 messageId: 'recommendPolyfill',
@@ -78,8 +84,9 @@ module.exports = {
     };
 
     const handleRequires = function (node) {
-      let type; let object; let
-        property;
+      let type;
+      let object;
+      let property;
       if (node.callee.type === 'MemberExpression') {
         type = node.callee.object.type;
         object = node.callee.object.name;

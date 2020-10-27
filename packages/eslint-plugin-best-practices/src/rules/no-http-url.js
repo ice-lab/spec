@@ -11,7 +11,6 @@ module.exports = {
     },
     fixable: 'code',
     messages: {
-
       noHttpUrl: 'Recommended "{{url}}" switch to HTTPS',
     },
   },

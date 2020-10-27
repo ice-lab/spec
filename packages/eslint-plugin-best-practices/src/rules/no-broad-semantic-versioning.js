@@ -47,7 +47,12 @@ module.exports = {
                 dependencyVersion.indexOf('>') > -1
               ) {
                 let newVersioning = '^1.0.0';
-                const dependencyPackageFile = path.join(cwd, 'node_modules', dependencyName, 'package.json');
+                const dependencyPackageFile = path.join(
+                  cwd,
+                  'node_modules',
+                  dependencyName,
+                  'package.json',
+                );
                 if (fs.existsSync(dependencyPackageFile)) {
                   const dependencyPackage = fs.readJSONSync(dependencyPackageFile);
                   newVersioning = `^${dependencyPackage.version}`;

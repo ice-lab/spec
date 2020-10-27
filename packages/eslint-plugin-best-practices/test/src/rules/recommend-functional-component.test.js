@@ -4,39 +4,44 @@ const { RuleTester } = require('eslint');
 const ruleTester = new RuleTester();
 
 ruleTester.run('recommend-functional-component', rule, {
-
-  valid: [{
-    code: `
+  valid: [
+    {
+      code: `
       const App = () => {
         return (<p>hello world</p>);
       };
     `,
-    parserOptions: {
-      ecmaVersion: 6,
-      sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true,
+      parserOptions: {
+        ecmaVersion: 6,
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
-  }],
+  ],
 
-  invalid: [{
-    code: `
+  invalid: [
+    {
+      code: `
       class App extends React.Component {
         render() {
           return (<p>hello world</p>);
         }
       }; 
     `,
-    parserOptions: {
-      ecmaVersion: 6,
-      sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true,
+      parserOptions: {
+        ecmaVersion: 6,
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
+      errors: [
+        {
+          message: "It is not recommended to use class component 'App'",
+        },
+      ],
     },
-    errors: [{
-      message: "It is not recommended to use class component 'App'",
-    }],
-  }],
+  ],
 });
