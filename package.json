@@ -20,7 +20,7 @@
   },
   "scripts": {
     "setup": "lerna bootstrap --no-ci && lerna link",
-    "lint": "eslint --fix --ext .js,ts ./ --resolve-plugins-relative-to ./packages/spec",
+    "lint": "eslint --ext .js,ts ./ --resolve-plugins-relative-to ./packages/spec",
     "prettier": "prettier **/* --write",
     "test": "jest && cd packages/spec && npm run test",
     "publish": "node ./scripts/publish",
@@ -28,7 +28,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm run lint && npm run test"
     }
   },
   "jest": {
