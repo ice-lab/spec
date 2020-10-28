@@ -119,11 +119,13 @@ Eslint is not yet supported having plugins as dependencies in shareable config. 
 
 ### Error: The file does not match your project config
 
-TypeScript project run lint file when see this error, you can update your `tsconfig.json`
+TypeScript project run lint file when see this error, you can update your `tsconfig.json`.
+
+update `src/*` to `src/**/*`:
 
 ```json
 {
-  "include": ["src/*"] // update to "include": ["src/**/*"]
+  "include": ["src/**/*"] 
 }
 ```
 
