@@ -1,4 +1,4 @@
-const deepmerge = require('deepmerge');
+const deepmerge = require('./deepmerge');
 const eslint = require('requireindex')(`${__dirname}/eslint`);
 const stylelint = require('requireindex')(`${__dirname}/stylelint`);
 const prettier = require('requireindex')(`${__dirname}/prettier`);
@@ -31,3 +31,8 @@ exports.getPrettierConfig = function (rule, customConfig) {
 exports.getCommitlintConfig = function (rule, customConfig) {
   return getConfig(commitlint, rule, customConfig);
 };
+
+// deepmerge for lint rules
+// Such as deepmerge({ rules: { 'comma-dangle': [1, 'never'] } }, { rules: { 'comma-dangle': [2, 'always'] } })
+// Get { rules: { 'comma-dangle': [2, 'always'] } Not { rules: { 'comma-dangle': [1, 'never', 2, 'always'] }
+exports.deepmerge = deepmerge;

@@ -18,8 +18,8 @@
     "access": "public"
   },
   "dependencies": {
+    "@iceworks/spec": "^1.0.0",
     "@mdn/browser-compat-data": "^2.0.3",
-    "deepmerge": "^4.2.2",
     "fs-extra": "^9.0.1",
     "line-column": "^1.0.2",
     "path-to-regexp": "^6.1.0",
