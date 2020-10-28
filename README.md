@@ -99,6 +99,39 @@ module.exports = getESLintConfig('rax', {
 });
 ```
 
+### package.json scripts
+
+Add `scripts` in your `package.json`, example: 
+```json
+"scripts": {
+  "lint": "npm run eslint && npm run stylelint",
+  "eslint": "eslint --cache --ext .js,.jsx,ts,tsx ./",
+  "stylelint": "stylelint ./**/*.scss",
+	"prettier": "prettier **/* --write"
+}
+```
+
+Then use `npm run lint` check your project, ues `npm run prettier` update your code.
+
+### Git hooks
+
+To lint commits before they are created you can use Husky's Git hook.
+
+Install in your project `npm install husky --save-dev` or `yarn add -D husky`.
+
+After that, you can add to your` package.json` the following code:
+
+```json
+"husky": {
+  "hooks": {
+    // git commit check commit message
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    // git push check code
+    "pre-push": "npm run lint"
+  }
+}
+```
+
 ## Run Test
 
 ```
