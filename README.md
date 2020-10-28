@@ -133,6 +133,12 @@ After that, you can add to your` package.json` the following code:
 * `commit-msg`: check commit message
 * `pre-push`: run scripts when push
 
+### Update from @ice/spec
+
+If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
+
+Based on `@iceworks/spec`'s simple API you can quickly migrate your project,  install and update your lint config file, the mission  is completed 😁.
+
 ## Run Test
 
 ```
