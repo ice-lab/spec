@@ -20,6 +20,8 @@ First create a `.eslintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
+##### JavaScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
+
 [rules](./src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
 
 ```js
@@ -28,6 +30,18 @@ const { getESLintConfig } = require('@iceworks/spec');
 
 // getESLintConfig(rule: 'rax'|'react', customConfig?);
 module.exports = getESLintConfig('react');
+```
+
+##### TypeScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
+
+[rules](./src/eslint/react-ts.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
+
+```js
+// .eslintrc.js
+const { getESLintConfig } = require('@iceworks/spec');
+
+// getESLintConfig(rule: 'rax-ts'|'react-ts', customConfig?);
+module.exports = getESLintConfig('react-ts');
 ```
 
 ### stylelint
@@ -101,7 +115,7 @@ module.exports = getESLintConfig('rax', {
 
 ### package.json scripts
 
-Add `scripts` in your `package.json`, example: 
+Add `scripts` in your `package.json`, example:
 
 ```json
 "scripts": {
@@ -131,37 +145,29 @@ After that, you can add to your` package.json` the following code:
 }
 ```
 
-* `commit-msg`: check commit message
-* `pre-push`: run scripts when push
+- `commit-msg`: check commit message
+- `pre-push`: run scripts when push
 
 ### Update from @ice/spec
 
 If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
 
-Based on `@iceworks/spec`'s simple API you can quickly migrate your project,  install and update your lint config file, the mission  is completed 😁.
+Based on `@iceworks/spec`'s simple API you can quickly migrate your project, install and update your lint config file, the mission is completed 😁.
 
-## Develop
+### Error: Cannot find module 'eslint-plugin-foo'
 
-### Run Test
+Eslint is not yet supported having plugins as dependencies in shareable config. [issue](https://github.com/eslint/eslint/issues/3458). As a temporary solution, you need add the plugin to devDependencies in your project, like `npm i --save-dev eslint-plugin-jsx-a11y`.
 
-```
-npm run test
-```
+### Error: The file does not match your project config
 
-run test for specific component
+TypeScript project run lint file when see this error, you can update your `tsconfig.json`.
 
-```
-npm run test -- packages/spec
-```
+update `src/*` to `src/**/*`:
 
-### Run Prettier
-
-```
-npm run prettier
+```json
+{
+  "include": ["src/**/*"]
+}
 ```
 
-### Run Lint
-
-```
-npm run lint
-```
+Enjoy!

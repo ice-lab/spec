@@ -1,3 +1,3 @@
-const { prettier } = require('./lib');
+const { getPrettierConfig } = require('./packages/spec/src/');
 
-module.exports = prettier;
+module.exports = getPrettierConfig('react');

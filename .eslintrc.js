@@ -1,6 +1,6 @@
-const { eslint, deepmerge } = require('./lib');
+const { getESLintConfig } = require('./packages/spec/src/');
 
-module.exports = deepmerge(eslint, {
+module.exports = getESLintConfig('react', {
   env: {
     jest: true
   }
