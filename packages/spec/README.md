@@ -120,7 +120,7 @@ Add `scripts` in your `package.json`, example:
 ```json
 "scripts": {
   "lint": "npm run eslint && npm run stylelint",
-  "eslint": "eslint --cache --ext .js,.jsx,ts,tsx ./",
+  "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
   "stylelint": "stylelint ./**/*.scss",
   "prettier": "prettier **/* --write"
 }

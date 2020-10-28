@@ -102,10 +102,11 @@ module.exports = getESLintConfig('rax', {
 ### package.json scripts
 
 Add `scripts` in your `package.json`, example: 
+
 ```json
 "scripts": {
   "lint": "npm run eslint && npm run stylelint",
-  "eslint": "eslint --cache --ext .js,.jsx,ts,tsx ./",
+  "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
   "stylelint": "stylelint ./**/*.scss",
   "prettier": "prettier **/* --write"
 }
@@ -139,7 +140,9 @@ If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your pr
 
 Based on `@iceworks/spec`'s simple API you can quickly migrate your project,  install and update your lint config file, the mission  is completed 😁.
 
-## Run Test
+## Develop
+
+### Run Test
 
 ```
 npm run test
@@ -151,13 +154,13 @@ run test for specific component
 npm run test -- packages/spec
 ```
 
-## Run Prettier
+### Run Prettier
 
 ```
 npm run prettier
 ```
 
-## Run Lint
+### Run Lint
 
 ```
 npm run lint

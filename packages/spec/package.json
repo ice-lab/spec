@@ -1,6 +1,6 @@
 {
   "name": "@iceworks/spec",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
   "main": "src/index.js",
   "files": [
@@ -18,15 +18,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ice-lab/iceworks.git"
+    "url": "git+https://github.com/ice-lab/spec.git"
   },
   "bugs": {
-    "url": "https://github.com/ice-lab/iceworks/issues"
+    "url": "https://github.com/ice-lab/spec/issues"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/ice-lab/iceworks#readme",
+  "homepage": "https://github.com/ice-lab/spec#readme",
   "peerDependencies": {
     "eslint": "^6.8.0"
   },
