@@ -1,4 +1,4 @@
-const deepmerge = require('./deepmerge');
+const deepmerge = require('deepmerge');
 const eslint = require('requireindex')(`${__dirname}/eslint`);
 const stylelint = require('requireindex')(`${__dirname}/stylelint`);
 const prettier = require('requireindex')(`${__dirname}/prettier`);
