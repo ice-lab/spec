@@ -122,7 +122,7 @@ Add `scripts` in your `package.json`, example:
   "lint": "npm run eslint && npm run stylelint",
   "eslint": "eslint --cache --ext .js,.jsx,ts,tsx ./",
   "stylelint": "stylelint ./**/*.scss",
-	"prettier": "prettier **/* --write"
+  "prettier": "prettier **/* --write"
 }
 ```
 
@@ -139,13 +139,14 @@ After that, you can add to your` package.json` the following code:
 ```json
 "husky": {
   "hooks": {
-    // git commit check commit message
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    // git push check code
     "pre-push": "npm run lint"
   }
 }
 ```
+
+- `commit-msg`: check commit message
+- `pre-push`: run scripts when push
 
 ### Error: Cannot find module 'eslint-plugin-foo'
 
