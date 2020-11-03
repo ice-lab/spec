@@ -37,7 +37,7 @@ ruleTester.run('recommend-polyfill', rule, {
       ],
     },
     {
-      code: 'new Proxy({}, handler);',
+      code: 'new Proxy({}, function() {});',
       errors: [
         {
           message: 'It is recommended to add polyfill for "Proxy." in "safari@9"',
