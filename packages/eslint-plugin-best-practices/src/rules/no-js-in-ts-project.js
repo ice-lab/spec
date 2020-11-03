@@ -6,6 +6,10 @@ const RULE_NAME = 'no-js-in-ts-project';
 const TS_REG = /\.tsx?$/;
 const JS_REG = /\.jsx?$/;
 
+const WHITE_LIST = ['commitlint.config.js', 'eslintrc.js', 'prettierrc.js', 'stylelintrc.js'];
+
+const WHITE_LIST_REG = new RegExp(`(${WHITE_LIST.join('|')})$`);
+
 let isTSProject = false;
 
 module.exports = {
@@ -28,7 +32,7 @@ module.exports = {
       isTSProject = true;
     }
 
-    if (isTSProject && JS_REG.test(extName)) {
+    if (isTSProject && !WHITE_LIST_REG.test(fileName) && JS_REG.test(extName)) {
       context.report({
         loc: {
           start: {

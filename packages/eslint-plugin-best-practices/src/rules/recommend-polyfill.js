@@ -84,36 +84,55 @@ module.exports = {
     };
 
     const handleRequires = function (node) {
-      let type;
-      let object;
-      let property;
-      if (node.callee.type === 'MemberExpression') {
-        type = node.callee.object.type;
-        object = node.callee.object.name;
-        property = node.callee.property.name || node.callee.property.value; // object.value or object[value]
+      try {
+        let type;
+        let object;
+        let property;
+        if (node.callee.type === 'Identifier') {
+          // new Proxy();
+          object = node.callee.name;
+          if (object && object.length > 1) {
+            handleReport(node, object, '');
+          }
+        } else if (node.callee.type === 'MemberExpression') {
+          type = node.callee.object.type;
+          object = node.callee.object.name;
+          property = node.callee.property.name || node.callee.property.value; // object.value or object[value]
 
-        if (type === 'CallExpression') {
-          object = node.callee.object.callee && node.callee.object.callee.name;
-        }
+          if (type === 'CallExpression') {
+            object = node.callee.object.callee && node.callee.object.callee.name;
+          }
 
-        // [].findAll()
-        if (type === 'ArrayExpression') {
-          object = 'Array';
-        }
+          // Array.prototype.xxx.apply([]);
+          if (type === 'MemberExpression') {
+            const obj = node.callee.object;
+            if (obj.object && obj.object.property && obj.object.property.name === 'prototype') {
+              object = obj.object.object.name;
+              property = obj.property.name;
+            }
+          }
 
-        if (type === 'ObjectExpression') {
-          object = 'Object';
-        }
+          // [].findAll()
+          if (type === 'ArrayExpression') {
+            object = 'Array';
+          }
 
-        if (object && property) {
-          if (object.length > 1) {
-            handleReport(node, object, property);
-          } else {
-            ['Array', 'Object', 'String'].forEach(() => {
+          if (type === 'ObjectExpression') {
+            object = 'Object';
+          }
+
+          if (object && property) {
+            if (object.length > 1) {
               handleReport(node, object, property);
-            });
+            } else {
+              ['Array', 'Object', 'String', 'Promise'].forEach(() => {
+                handleReport(node, object, property);
+              });
+            }
           }
         }
+      } catch (e) {
+        // ignore
       }
     };
 
