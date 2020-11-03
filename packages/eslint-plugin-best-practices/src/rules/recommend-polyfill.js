@@ -29,6 +29,21 @@ Object.keys(data).forEach((key) => {
   }
 });
 
+// For extra property check. Like a.flat no matter what is a.
+const extraTargetProperties = {
+  flat: { parent: 'Array' },
+  flatMap: { parent: 'Array' },
+  codePointAt: { parent: 'String' },
+  matchAll: { parent: 'String' },
+  normalize: { parent: 'String' },
+  padEnd: { parent: 'String' },
+  padStart: { parent: 'String' },
+  replaceAll: { parent: 'String' },
+  trimEnd: { parent: 'String' },
+  trimStart: { parent: 'String' },
+  finally: { parent: 'Promise' },
+};
+
 const RULE_NAME = 'recommend-polyfill';
 
 module.exports = {
@@ -45,8 +60,6 @@ module.exports = {
   },
 
   create(context) {
-    // console.log(data.Array.from.__compat.support.safari);
-
     const handleReport = function (node, object, property) {
       let target = data[object];
 
@@ -80,6 +93,16 @@ module.exports = {
         } catch (e) {
           // ignore
         }
+      } else if (extraTargetProperties[property]) {
+        context.report({
+          node,
+          messageId: 'recommendPolyfill',
+          data: {
+            object: extraTargetProperties[property].parent,
+            property,
+            browser: 'iOS9',
+          },
+        });
       }
     };
 
@@ -89,9 +112,10 @@ module.exports = {
         let object;
         let property;
         if (node.callee.type === 'Identifier') {
-          // new Proxy();
+          // new xxx();
+          // xxx.xxx();
           object = node.callee.name;
-          if (object && object.length > 1) {
+          if (object) {
             handleReport(node, object, '');
           }
         } else if (node.callee.type === 'MemberExpression') {
@@ -103,7 +127,7 @@ module.exports = {
             object = node.callee.object.callee && node.callee.object.callee.name;
           }
 
-          // Array.prototype.xxx.apply([]);
+          // xxx.prototype.xxx.call();
           if (type === 'MemberExpression') {
             const obj = node.callee.object;
             if (obj.object && obj.object.property && obj.object.property.name === 'prototype') {
@@ -112,23 +136,23 @@ module.exports = {
             }
           }
 
-          // [].findAll()
+          // [].xxx()
           if (type === 'ArrayExpression') {
             object = 'Array';
           }
 
+          // {}.xxx()
           if (type === 'ObjectExpression') {
             object = 'Object';
           }
 
+          // ''.xxx()
+          if (type === 'Literal' && typeof node.callee.object.value === 'string') {
+            object = 'String';
+          }
+
           if (object && property) {
-            if (object.length > 1) {
-              handleReport(node, object, property);
-            } else {
-              ['Array', 'Object', 'String', 'Promise'].forEach(() => {
-                handleReport(node, object, property);
-              });
-            }
+            handleReport(node, object, property);
           }
         }
       } catch (e) {

@@ -36,5 +36,32 @@ ruleTester.run('recommend-polyfill', rule, {
         },
       ],
     },
+    {
+      code: 'new Proxy({}, handler);',
+      errors: [
+        {
+          message: 'It is recommended to add polyfill for "Proxy." in "safari@9"',
+        },
+      ],
+    },
+    {
+      code: 'Reflect.apply(Math.floor, undefined, [1.75]);',
+      errors: [
+        {
+          message: 'It is recommended to add polyfill for "Reflect.apply" in "safari@9"',
+        },
+      ],
+    },
+    {
+      code: `
+      var p = new Promise(function() {});
+      p.finally(function() {});
+      `,
+      errors: [
+        {
+          message: 'It is recommended to add polyfill for "Promise.finally" in "iOS9"',
+        },
+      ],
+    },
   ],
 });
