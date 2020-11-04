@@ -55,7 +55,7 @@ module.exports = {
     fixable: null,
     messages: {
       recommendPolyfill:
-        'It is recommended to add polyfill for "{{object}}.{{property}}" in "{{browser}}"',
+        'It is recommended to add polyfill for "{{API}}", This might be caused by a compatibility problem in "{{browser}}"',
     },
   },
 
@@ -82,8 +82,7 @@ module.exports = {
                 node,
                 messageId: 'recommendPolyfill',
                 data: {
-                  object,
-                  property,
+                  API: `${object}${property ? '.' : ''}${property}`,
                   browser: `${browser}@${targetBrowsers[browser]}`,
                 },
               });
@@ -98,8 +97,7 @@ module.exports = {
           node,
           messageId: 'recommendPolyfill',
           data: {
-            object: extraTargetProperties[property].parent,
-            property,
+            API: `${extraTargetProperties[property].parent}.${property}`,
             browser: 'iOS9',
           },
         });
