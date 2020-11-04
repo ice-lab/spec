@@ -11,6 +11,9 @@ ruleTester.run('no-secret-info', rule, {
       code: 'var accessKeySecret = process.env.ACCESS_KEY_SECRET;',
     },
     {
+      code: 'var password = "";',
+    },
+    {
       code: `
     var client ={
       accessKeyToken: process.env.ACCESS_KEY_SECRET

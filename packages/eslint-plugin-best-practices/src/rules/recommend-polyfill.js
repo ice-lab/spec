@@ -29,6 +29,21 @@ Object.keys(data).forEach((key) => {
   }
 });
 
+// For extra property check. Like a.flat no matter what is a.
+const extraTargetProperties = {
+  flat: { parent: 'Array' },
+  flatMap: { parent: 'Array' },
+  codePointAt: { parent: 'String' },
+  matchAll: { parent: 'String' },
+  normalize: { parent: 'String' },
+  padEnd: { parent: 'String' },
+  padStart: { parent: 'String' },
+  replaceAll: { parent: 'String' },
+  trimEnd: { parent: 'String' },
+  trimStart: { parent: 'String' },
+  finally: { parent: 'Promise' },
+};
+
 const RULE_NAME = 'recommend-polyfill';
 
 module.exports = {
@@ -40,13 +55,11 @@ module.exports = {
     fixable: null,
     messages: {
       recommendPolyfill:
-        'It is recommended to add polyfill for "{{object}}.{{property}}" in "{{browser}}"',
+        'It is recommended to add polyfill for "{{API}}", This might be caused by a compatibility problem in "{{browser}}"',
     },
   },
 
   create(context) {
-    // console.log(data.Array.from.__compat.support.safari);
-
     const handleReport = function (node, object, property) {
       let target = data[object];
 
@@ -69,8 +82,7 @@ module.exports = {
                 node,
                 messageId: 'recommendPolyfill',
                 data: {
-                  object,
-                  property,
+                  API: `${object}${property ? '.' : ''}${property}`,
                   browser: `${browser}@${targetBrowsers[browser]}`,
                 },
               });
@@ -80,40 +92,69 @@ module.exports = {
         } catch (e) {
           // ignore
         }
+      } else if (extraTargetProperties[property]) {
+        context.report({
+          node,
+          messageId: 'recommendPolyfill',
+          data: {
+            API: `${extraTargetProperties[property].parent}.${property}`,
+            browser: 'iOS9',
+          },
+        });
       }
     };
 
     const handleRequires = function (node) {
-      let type;
-      let object;
-      let property;
-      if (node.callee.type === 'MemberExpression') {
-        type = node.callee.object.type;
-        object = node.callee.object.name;
-        property = node.callee.property.name || node.callee.property.value; // object.value or object[value]
+      try {
+        let type;
+        let object;
+        let property;
+        if (node.callee.type === 'Identifier') {
+          // new xxx();
+          // xxx.xxx();
+          object = node.callee.name;
+          if (object) {
+            handleReport(node, object, '');
+          }
+        } else if (node.callee.type === 'MemberExpression') {
+          type = node.callee.object.type;
+          object = node.callee.object.name;
+          property = node.callee.property.name || node.callee.property.value; // object.value or object[value]
 
-        if (type === 'CallExpression') {
-          object = node.callee.object.callee && node.callee.object.callee.name;
-        }
+          if (type === 'CallExpression') {
+            object = node.callee.object.callee && node.callee.object.callee.name;
+          }
 
-        // [].findAll()
-        if (type === 'ArrayExpression') {
-          object = 'Array';
-        }
+          // xxx.prototype.xxx.call();
+          if (type === 'MemberExpression') {
+            const obj = node.callee.object;
+            if (obj.object && obj.object.property && obj.object.property.name === 'prototype') {
+              object = obj.object.object.name;
+              property = obj.property.name;
+            }
+          }
 
-        if (type === 'ObjectExpression') {
-          object = 'Object';
-        }
+          // [].xxx()
+          if (type === 'ArrayExpression') {
+            object = 'Array';
+          }
 
-        if (object && property) {
-          if (object.length > 1) {
+          // {}.xxx()
+          if (type === 'ObjectExpression') {
+            object = 'Object';
+          }
+
+          // ''.xxx()
+          if (type === 'Literal' && typeof node.callee.object.value === 'string') {
+            object = 'String';
+          }
+
+          if (object && property) {
             handleReport(node, object, property);
-          } else {
-            ['Array', 'Object', 'String'].forEach(() => {
-              handleReport(node, object, property);
-            });
           }
         }
+      } catch (e) {
+        // ignore
       }
     };
 

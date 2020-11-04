@@ -12,6 +12,10 @@ ruleTester.run('no-js-in-ts-project', rule, {
       code: '',
     },
     {
+      filename: '.stylelintrc.js',
+      code: '',
+    },
+    {
       filename: 'home.ts',
       code: '',
     },
