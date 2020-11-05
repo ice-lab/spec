@@ -1,7 +1,14 @@
-const requireIndex = require('requireindex');
+const path = require('path');
+const requireAll = require('require-all');
 
-exports.rules = requireIndex(`${__dirname}/rules`);
-exports.configs = requireIndex(`${__dirname}/configs`);
+exports.rules = requireAll({
+  dirname: path.resolve(__dirname, 'rules'),
+});
+
+exports.configs = requireAll({
+  dirname: path.resolve(__dirname, 'configs'),
+});
+
 exports.processors = {
   '.json': {
     preprocess(text) {
