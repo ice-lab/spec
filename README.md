@@ -20,7 +20,7 @@ First create a `.eslintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
+[rules](./packages/spec/src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
 
 ```js
 // .eslintrc.js
@@ -38,7 +38,7 @@ First create a `.stylelintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./src/stylelint/react.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
+[rules](./packages/spec/src/stylelint/react.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
 
 ```js
 // .stylelintrc.js
@@ -48,7 +48,7 @@ const { getStylelintConfig } = require('@iceworks/spec');
 module.exports = getStylelintConfig('react');
 ```
 
-### prettier [rules](./src/prettier/react.js)
+### prettier [rules](./packages/spec/src/prettier/react.js)
 
 #### 1. Create configuration file
 
@@ -72,7 +72,7 @@ First create a `.commitlintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./src/commitlint/react.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
+[rules](./packages/spec/src/commitlint/react.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
 
 ```js
 // .commitlintrc.js
