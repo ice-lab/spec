@@ -1,5 +1,9 @@
 // https://www.npmjs.com/package/eslint-config-ali
 // ESlint config for Rax project
 module.exports = {
-  extends: [require.resolve('eslint-config-ali/rax'), 'plugin:@iceworks/best-practices/rax'],
+  extends: [
+    require.resolve('eslint-config-ali/rax'),
+    // For some ci and jest test env, we chose require.resolve instead 'plugin:@iceworks/best-practices/rax'
+    require.resolve('@iceworks/eslint-plugin-best-practices/src/configs/rax'),
+  ],
 };

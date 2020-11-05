@@ -3,6 +3,7 @@
 module.exports = {
   extends: [
     require.resolve('eslint-config-ali/typescript/rax'),
-    'plugin:@iceworks/best-practices/rax-ts',
+    // For some ci and jest test env, we chose require.resolve instead 'plugin:@iceworks/best-practices/rax-ts'
+    require.resolve('@iceworks/eslint-plugin-best-practices/src/configs/rax-ts'),
   ],
 };

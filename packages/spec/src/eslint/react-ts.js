@@ -3,6 +3,7 @@
 module.exports = {
   extends: [
     require.resolve('eslint-config-ali/typescript/react'),
-    'plugin:@iceworks/best-practices/react-ts',
+    // For some ci and jest test env, we chose require.resolve instead 'plugin:@iceworks/best-practices/react-ts'
+    require.resolve('@iceworks/eslint-plugin-best-practices/src/configs/react-ts'),
   ],
 };
