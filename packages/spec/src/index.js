@@ -1,10 +1,19 @@
+const path = require('path');
 const deepmerge = require('./deepmerge');
 const requireAll = require('require-all');
 
-const eslint = requireAll(`${__dirname}/eslint`);
-const stylelint = requireAll(`${__dirname}/stylelint`);
-const prettier = requireAll(`${__dirname}/prettier`);
-const commitlint = requireAll(`${__dirname}/commitlint`);
+const eslint = requireAll({
+  dirname: path.resolve(__dirname, 'eslint'),
+});
+const stylelint = requireAll({
+  dirname: path.resolve(__dirname, 'stylelint'),
+});
+const prettier = requireAll({
+  dirname: path.resolve(__dirname, 'prettier'),
+});
+const commitlint = requireAll({
+  dirname: path.resolve(__dirname, 'commitlint'),
+});
 
 function getConfig(configs, rule, customConfig) {
   if (!configs[rule]) {
