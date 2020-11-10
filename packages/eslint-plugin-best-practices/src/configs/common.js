@@ -6,6 +6,10 @@ module.exports = {
       processor: '@iceworks/best-practices/.json',
       rules: {
         quotes: 'off',
+        semi: 'off',
+        'eol-last': 'off',
+        'quote-props': 'off',
+        'comma-dangle': 'off',
         '@iceworks/best-practices/deps-no-ice-scripts': 'warn',
         '@iceworks/best-practices/deps-no-resolutions': 'warn',
         '@iceworks/best-practices/deps-no-router-library': 'warn',
