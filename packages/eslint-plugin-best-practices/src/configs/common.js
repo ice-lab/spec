@@ -6,6 +6,10 @@ module.exports = {
       processor: '@iceworks/best-practices/.json',
       rules: {
         quotes: 'off',
+        semi: 'off',
+        'eol-last': 'off',
+        'quote-props': 'off',
+        'comma-dangle': 'off',
         '@iceworks/best-practices/deps-no-ice-scripts': 'warn',
         '@iceworks/best-practices/deps-no-resolutions': 'warn',
         '@iceworks/best-practices/deps-no-router-library': 'warn',
@@ -15,6 +19,7 @@ module.exports = {
     },
   ],
   rules: {
+    'no-unused-vars': 'warn',
     '@iceworks/best-practices/no-http-url': 'warn',
     '@iceworks/best-practices/no-js-in-ts-project': 'warn',
     '@iceworks/best-practices/no-lowercase-component-name': 'warn',

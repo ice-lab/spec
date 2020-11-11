@@ -1,6 +1,6 @@
 // prettier config for ice and react project
 module.exports = {
-  printWidth: 100,
+  printWidth: 120,
   tabWidth: 2,
   semi: true,
   singleQuote: true,
