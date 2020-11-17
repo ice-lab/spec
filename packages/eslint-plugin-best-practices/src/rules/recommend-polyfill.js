@@ -55,7 +55,7 @@ module.exports = {
     fixable: null,
     messages: {
       recommendPolyfill:
-        'It is recommended to add polyfill for "{{API}}", This might be caused by a compatibility problem in "{{browser}}"',
+        '[Critical] It is recommended to add polyfill for "{{API}}", This might be caused by a compatibility problem in "{{browser}}"',
     },
   },
 

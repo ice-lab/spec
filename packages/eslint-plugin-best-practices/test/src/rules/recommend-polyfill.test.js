@@ -16,7 +16,7 @@ ruleTester.run('recommend-polyfill', rule, {
       errors: [
         {
           message:
-            'It is recommended to add polyfill for "navigator.sendBeacon", This might be caused by a compatibility problem in "safari@9"',
+            '[Critical] It is recommended to add polyfill for "navigator.sendBeacon", This might be caused by a compatibility problem in "safari@9"',
         },
       ],
     },
@@ -25,7 +25,7 @@ ruleTester.run('recommend-polyfill', rule, {
       errors: [
         {
           message:
-            'It is recommended to add polyfill for "Array.flat", This might be caused by a compatibility problem in "safari@9"',
+            '[Critical] It is recommended to add polyfill for "Array.flat", This might be caused by a compatibility problem in "safari@9"',
         },
       ],
     },
@@ -34,7 +34,7 @@ ruleTester.run('recommend-polyfill', rule, {
       errors: [
         {
           message:
-            'It is recommended to add polyfill for "Array.flat", This might be caused by a compatibility problem in "safari@9"',
+            '[Critical] It is recommended to add polyfill for "Array.flat", This might be caused by a compatibility problem in "safari@9"',
         },
       ],
     },
@@ -43,7 +43,7 @@ ruleTester.run('recommend-polyfill', rule, {
       errors: [
         {
           message:
-            'It is recommended to add polyfill for "Proxy", This might be caused by a compatibility problem in "safari@9"',
+            '[Critical] It is recommended to add polyfill for "Proxy", This might be caused by a compatibility problem in "safari@9"',
         },
       ],
     },
@@ -52,7 +52,7 @@ ruleTester.run('recommend-polyfill', rule, {
       errors: [
         {
           message:
-            'It is recommended to add polyfill for "Reflect.apply", This might be caused by a compatibility problem in "safari@9"',
+            '[Critical] It is recommended to add polyfill for "Reflect.apply", This might be caused by a compatibility problem in "safari@9"',
         },
       ],
     },
@@ -64,7 +64,7 @@ ruleTester.run('recommend-polyfill', rule, {
       errors: [
         {
           message:
-            'It is recommended to add polyfill for "Promise.finally", This might be caused by a compatibility problem in "iOS9"',
+            '[Critical] It is recommended to add polyfill for "Promise.finally", This might be caused by a compatibility problem in "iOS9"',
         },
       ],
     },
