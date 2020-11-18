@@ -34,7 +34,7 @@ const getCheckAndReportFn = (context) => {
         });
       }
     }
-  }
+  };
 };
 
 module.exports = {
