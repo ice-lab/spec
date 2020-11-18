@@ -21,6 +21,7 @@
     "@iceworks/spec": "^1.0.0",
     "@mdn/browser-compat-data": "^2.0.3",
     "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
     "line-column": "^1.0.2",
     "path-to-regexp": "^6.1.0",
     "require-all": "^3.0.0",
