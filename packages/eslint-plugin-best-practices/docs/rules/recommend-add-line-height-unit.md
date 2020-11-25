@@ -1,4 +1,4 @@
-# recommend-functional-component
+# recommend-add-line-height-unit
 
 Recommended to add unit for line-height which is more than 5.
 
