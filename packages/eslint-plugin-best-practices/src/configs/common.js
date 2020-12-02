@@ -19,7 +19,6 @@ module.exports = {
     },
   ],
   rules: {
-    'no-unused-vars': 'warn',
     '@iceworks/best-practices/no-http-url': 'warn',
     '@iceworks/best-practices/no-js-in-ts-project': 'warn',
     '@iceworks/best-practices/no-lowercase-component-name': 'warn',
