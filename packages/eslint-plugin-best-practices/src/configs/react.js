@@ -7,6 +7,7 @@ module.exports = deepmerge(commonConfig, {
     'max-lines': ['warn', { max: 500 }],
     'no-plusplus': 'off',
     'no-return-await': 'off',
+    'no-unused-vars': 'warn',
     'react/prop-types': 'off',
   },
 });

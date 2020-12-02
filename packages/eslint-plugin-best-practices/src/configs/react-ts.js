@@ -8,5 +8,6 @@ module.exports = deepmerge(commonConfig, {
     'no-plusplus': 'off',
     'no-return-await': 'off',
     'react/prop-types': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
   },
 });

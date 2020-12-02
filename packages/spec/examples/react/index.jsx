@@ -2,6 +2,8 @@ import React from 'react';
 import { Breadcrumb, Box, Typography } from '@alifd/next';
 import styles from './index.module.scss';
 
+const unusedVar = 1;
+
 const PageHeader = (props) => {
   const { breadcrumbs, title, description, ...others } = props;
   return (

@@ -7,6 +7,8 @@ interface LogoProps {
   uri: string;
 }
 
+const unusedVar = 1;
+
 export default (props: LogoProps) => {
   const { uri } = props;
   const source = { uri };
