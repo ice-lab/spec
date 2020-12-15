@@ -36,7 +36,7 @@ module.exports = {
             node,
             messageId: 'recommendFunctionalComponent',
             data: {
-              name: name || 'no name',
+              name: name || 'Anonymous',
             },
           });
         }
