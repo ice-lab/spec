@@ -24,7 +24,7 @@ module.exports = {
       ignoreComments: false,
       ignoreRegExpLiterals: true,
       ignoreStrings: true,
-      ignoreTemplateLiterals: true
+      ignoreTemplateLiterals: true,
     }],
     '@iceworks/best-practices/no-http-url': 'warn',
     '@iceworks/best-practices/no-js-in-ts-project': 'warn',
