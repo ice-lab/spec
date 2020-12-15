@@ -18,7 +18,7 @@ module.exports = {
   create(context) {
     return {
       ClassDeclaration: function handleRequires(node) {
-        const { name } = node.id;
+        const { name } = node.id || {};
         let superName = '';
         if (node.superClass) {
           if (node.superClass.name) {
@@ -36,7 +36,7 @@ module.exports = {
             node,
             messageId: 'recommendFunctionalComponent',
             data: {
-              name,
+              name: name || 'Anonymous',
             },
           });
         }
