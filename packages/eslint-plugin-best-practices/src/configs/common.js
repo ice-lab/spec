@@ -19,6 +19,13 @@ module.exports = {
     },
   ],
   rules: {
+    'max-len': ['warn', 120, 2, {
+      ignoreUrls: true,
+      ignoreComments: false,
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true
+    }],
     '@iceworks/best-practices/no-http-url': 'warn',
     '@iceworks/best-practices/no-js-in-ts-project': 'warn',
     '@iceworks/best-practices/no-lowercase-component-name': 'warn',
