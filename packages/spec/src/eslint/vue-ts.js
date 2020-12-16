@@ -6,6 +6,6 @@ module.exports = {
   ],
   rules: {
     // Change error to warn
-    '@typescript-eslint/no-unused-vars': 'warn'
-  }
+    '@typescript-eslint/no-unused-vars': 'warn',
+  },
 };

@@ -6,6 +6,6 @@ module.exports = {
   ],
   rules: {
     // Change error to warn
-    'no-unused-vars': 'warn'
-  }
+    'no-unused-vars': 'warn',
+  },
 };
