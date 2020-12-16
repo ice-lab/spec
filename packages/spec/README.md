@@ -58,7 +58,7 @@ First create a `.stylelintrc.js` file. Then edit your config.
 // .stylelintrc.js
 const { getStylelintConfig } = require('@iceworks/spec');
 
-// getStylelintConfig(rule: 'rax'|'react', customConfig?);
+// getStylelintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getStylelintConfig('react');
 ```
 
@@ -104,7 +104,7 @@ module.exports = getCommitlintConfig('react');
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'react', customConfig?);
+// getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('rax', {
   // custom config it will merge into main config
   rules: {

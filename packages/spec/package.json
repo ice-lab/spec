@@ -14,7 +14,7 @@
     "eslint-vue": "eslint -c .eslintrc.vue.js --ext .vue ./examples/vue/",
     "eslint-vue-ts": "eslint -c .eslintrc.vue-ts.js --ext .vue ./examples/vue-ts/",
     "eslint-test": "npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-react && npm run eslint-react-ts && npm run eslint-vue && npm run eslint-vue-ts",
-    "stylelin-test": "stylelint ./**/*.{css,scss}",
+    "stylelin-test": "stylelint ./**/*.{css,scss,vue}",
     "test": "npm run eslint-test && npm run stylelin-test",
     "prepublishOnly": "npm run test"
   },
