@@ -1,6 +1,6 @@
 {
   "name": "@iceworks/spec",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
   "main": "src/index.js",
   "files": [
@@ -11,8 +11,10 @@
     "eslint-rax-ts": "eslint -c .eslintrc.rax-ts.js --ext .ts,.tsx ./examples/rax-ts/",
     "eslint-react": "eslint -c .eslintrc.react.js --ext .js,.jsx ./examples/react/",
     "eslint-react-ts": "eslint -c .eslintrc.react-ts.js --ext .ts,.tsx ./examples/react-ts/",
-    "eslint-test": "npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-react && npm run eslint-react-ts",
-    "stylelin-test": "stylelint ./**/*.{css,scss}",
+    "eslint-vue": "eslint -c .eslintrc.vue.js --ext .vue ./examples/vue/",
+    "eslint-vue-ts": "eslint -c .eslintrc.vue-ts.js --ext .vue ./examples/vue-ts/",
+    "eslint-test": "npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-react && npm run eslint-react-ts && npm run eslint-vue && npm run eslint-vue-ts",
+    "stylelin-test": "stylelint ./**/*.{css,scss,vue}",
     "test": "npm run eslint-test && npm run stylelin-test",
     "prepublishOnly": "npm run test"
   },
@@ -40,9 +42,11 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-vue": "^6.2.2",
     "require-all": "^3.0.0",
     "stylelint-config-ali": "^0.3.4",
-    "stylelint-scss": "^3.18.0"
+    "stylelint-scss": "^3.18.0",
+    "vue-eslint-parser": "^7.2.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

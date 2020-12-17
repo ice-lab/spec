@@ -20,13 +20,13 @@ First create a `.eslintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./packages/spec/src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
+[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
 
 ```js
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'react', customConfig?);
+// getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('react');
 ```
 
@@ -38,17 +38,17 @@ First create a `.stylelintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./packages/spec/src/stylelint/react.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
+[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/stylelint/react.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
 
 ```js
 // .stylelintrc.js
 const { getStylelintConfig } = require('@iceworks/spec');
 
-// getStylelintConfig(rule: 'rax'|'react', customConfig?);
+// getStylelintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getStylelintConfig('react');
 ```
 
-### prettier [rules](./packages/spec/src/prettier/react.js)
+### prettier [rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/prettier/react.js)
 
 #### 1. Create configuration file
 
@@ -60,7 +60,7 @@ First create a `.prettierrc.js` file. Then edit your config.
 // .prettierrc.js
 const { getPrettierConfig } = require('@iceworks/spec');
 
-// getPrettierConfig(rule: 'rax'|'react', customConfig?);
+// getPrettierConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getPrettierConfig('react');
 ```
 
@@ -72,13 +72,13 @@ First create a `.commitlintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](./packages/spec/src/commitlint/react.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
+[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/commitlint/react.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
 
 ```js
 // .commitlintrc.js
 const { getCommitlintConfig } = require('@iceworks/spec');
 
-// getCommitlintConfig(rule: 'rax'|'react', customConfig?);
+// getCommitlintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getCommitlintConfig('react');
 ```
 
@@ -90,7 +90,7 @@ module.exports = getCommitlintConfig('react');
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'react', customConfig?);
+// getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('rax', {
   // custom config it will merge into main config
   rules: {
