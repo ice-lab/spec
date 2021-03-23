@@ -28,8 +28,8 @@ First create a `.eslintrc.js` file. Then edit your config.
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'react'|'vue' , customConfig?);
-module.exports = getESLintConfig('react');
+// getESLintConfig(rule: 'common'|'rax'|'react'|'vue' , customConfig?);
+module.exports = getESLintConfig('common');
 ```
 
 ##### TypeScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
@@ -40,8 +40,8 @@ module.exports = getESLintConfig('react');
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax-ts'|'react-ts'|'vue-ts', customConfig?);
-module.exports = getESLintConfig('react-ts');
+// getESLintConfig(rule: 'common-ts'|'rax-ts'|'react-ts'|'vue-ts', customConfig?);
+module.exports = getESLintConfig('common-ts');
 ```
 
 ### stylelint
@@ -58,7 +58,7 @@ First create a `.stylelintrc.js` file. Then edit your config.
 // .stylelintrc.js
 const { getStylelintConfig } = require('@iceworks/spec');
 
-// getStylelintConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getStylelintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getStylelintConfig('react');
 ```
 
@@ -74,7 +74,7 @@ First create a `.prettierrc.js` file. Then edit your config.
 // .prettierrc.js
 const { getPrettierConfig } = require('@iceworks/spec');
 
-// getPrettierConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getPrettierConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getPrettierConfig('react');
 ```
 
@@ -92,7 +92,7 @@ First create a `.commitlintrc.js` file. Then edit your config.
 // .commitlintrc.js
 const { getCommitlintConfig } = require('@iceworks/spec');
 
-// getCommitlintConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getCommitlintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getCommitlintConfig('react');
 ```
 
@@ -104,7 +104,7 @@ module.exports = getCommitlintConfig('react');
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getESLintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('rax', {
   // custom config it will merge into main config
   rules: {
