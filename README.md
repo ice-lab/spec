@@ -1,11 +1,11 @@
-# @iceworks/spec
+# @fed/spec
 
 Easy to use **eslint**(support TypeScript) / **stylelint** / **prettier** / **commitlint** in [rax](https://rax.js.org/), [ice](https://ice.work/) and react project. And spec means specification.
 
 ## Install
 
 ```bash
-$ npm i --save-dev @iceworks/spec eslint stylelint prettier @commitlint/cli
+$ npm i --save-dev @fed/spec eslint stylelint prettier @commitlint/cli
 ```
 
 PS: You don't need to install other eslint plugins and parsers.
@@ -20,11 +20,11 @@ First create a `.eslintrc.js` file. Then edit your config.
 
 #### 2. Update config
 
-[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
+[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@fed/eslint-plugin-best-practices](https://www.npmjs.com/package/@fed/eslint-plugin-best-practices).
 
 ```js
 // .eslintrc.js
-const { getESLintConfig } = require('@iceworks/spec');
+const { getESLintConfig } = require('@fed/spec');
 
 // getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('react');
@@ -42,7 +42,7 @@ First create a `.stylelintrc.js` file. Then edit your config.
 
 ```js
 // .stylelintrc.js
-const { getStylelintConfig } = require('@iceworks/spec');
+const { getStylelintConfig } = require('@fed/spec');
 
 // getStylelintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getStylelintConfig('react');
@@ -58,7 +58,7 @@ First create a `.prettierrc.js` file. Then edit your config.
 
 ```js
 // .prettierrc.js
-const { getPrettierConfig } = require('@iceworks/spec');
+const { getPrettierConfig } = require('@fed/spec');
 
 // getPrettierConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getPrettierConfig('react');
@@ -76,7 +76,7 @@ First create a `.commitlintrc.js` file. Then edit your config.
 
 ```js
 // .commitlintrc.js
-const { getCommitlintConfig } = require('@iceworks/spec');
+const { getCommitlintConfig } = require('@fed/spec');
 
 // getCommitlintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getCommitlintConfig('react');
@@ -88,7 +88,7 @@ module.exports = getCommitlintConfig('react');
 
 ```js
 // .eslintrc.js
-const { getESLintConfig } = require('@iceworks/spec');
+const { getESLintConfig } = require('@fed/spec');
 
 // getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('rax', {
@@ -136,9 +136,9 @@ After that, you can add to your` package.json` the following code:
 
 ### Update from @ice/spec
 
-If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
+If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@fed/spec` to get better maintainability and faster response to lint rules support.
 
-Based on `@iceworks/spec`'s simple API you can quickly migrate your project,  install and update your lint config file, the mission  is completed 😁.
+Based on `@fed/spec`'s simple API you can quickly migrate your project,  install and update your lint config file, the mission  is completed 😁.
 
 ## Develop
 

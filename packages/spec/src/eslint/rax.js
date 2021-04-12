@@ -3,7 +3,7 @@
 module.exports = {
   extends: [
     require.resolve('eslint-config-ali/rax'),
-    // For some ci and jest test env, we chose require.resolve instead 'plugin:@iceworks/best-practices/rax'
-    require.resolve('@iceworks/eslint-plugin-best-practices/src/configs/rax'),
+    // For some ci and jest test env, we chose require.resolve instead 'plugin:@fed/best-practices/rax'
+    require.resolve('@fed/eslint-plugin-best-practices/src/configs/rax'),
   ],
 };

@@ -1,4 +1,4 @@
-/* eslint-disable @iceworks/best-practices/no-http-url */
+/* eslint-disable @fed/best-practices/no-http-url */
 const docsUrl = require('../docsUrl');
 
 const RULE_NAME = 'no-http-url';

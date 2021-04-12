@@ -1,5 +1,5 @@
 const commonConfig = require('./common');
-const { deepmerge } = require('@iceworks/spec');
+const { deepmerge } = require('@fed/spec');
 
 module.exports = deepmerge(commonConfig, {
   rules: {

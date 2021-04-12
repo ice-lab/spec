@@ -1,13 +1,13 @@
 {
-  "name": "@iceworks/eslint-plugin-best-practices",
-  "version": "0.2.7",
-  "description": "Iceworks best practices eslint plugin.",
+  "name": "@fed/eslint-plugin-best-practices",
+  "version": "1.0.0",
+  "description": "Fed best practices eslint plugin.",
   "files": [
     "docs/",
     "src/"
   ],
   "keywords": [
-    "iceworks",
+    "appworks",
     "best practices",
     "eslint",
     "eslintplugin",
@@ -18,7 +18,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@iceworks/spec": "^1.0.0",
+    "@fed/spec": "^1.0.0",
     "@mdn/browser-compat-data": "^2.0.3",
     "fs-extra": "^9.0.1",
     "glob": "^7.1.6",
@@ -28,6 +28,6 @@
     "semver": "^7.3.2"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^7.22.0"
   }
 }

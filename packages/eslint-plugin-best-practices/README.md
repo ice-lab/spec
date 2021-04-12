@@ -1,30 +1,30 @@
-# @iceworks/eslint-plugin-best-practices
+# @fed/eslint-plugin-best-practices
 
-Iceworks best practices eslint plugin.
+fed best practices eslint plugin.
 
 ## Installation
 
-Install [esLint](http://eslint.org), `@iceworks/eslint-plugin-best-practices`:
+Install [esLint](http://eslint.org), `@fed/eslint-plugin-best-practices`:
 
 ```shell
-$ npm install --save-dev eslint @iceworks/eslint-plugin-best-practices
+$ npm install --save-dev eslint @fed/eslint-plugin-best-practices
 ```
 
 ## Usage
 
-Recommend use [@iceworks/spec](https://www.npmjs.com/package/@iceworks/spec)
+Recommend use [@fed/spec](https://www.npmjs.com/package/@fed/spec)
 
 Then configure the rules you want to use under the rules section.
 
 ```js
 // .eslintrc.js
-const { getESLintConfig } = require('@iceworks/spec');
+const { getESLintConfig } = require('@fed/spec');
 
 // getESLintConfig(rule: 'rax'|'rax-ts'|'react'|'react-ts', customConfig?);
 module.exports = getESLintConfig('rax', {
   // custom config it will merge into main config
   rules: {
-    '@iceworks/best-practices/rule-name': 'off',
+    '@fed/best-practices/rule-name': 'off',
   },
 });
 ```
