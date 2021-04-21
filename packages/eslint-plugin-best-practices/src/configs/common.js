@@ -21,6 +21,7 @@ module.exports = {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
         '**/tests/*.{j,t}s?(x)',
+        '**/test/*.{j,t}s?(x)',
       ],
       env: { jest: true },
     },
