@@ -17,6 +17,15 @@ module.exports = {
         '@iceworks/best-practices/recommend-update-rax': 'warn',
       },
     },
+    {
+      files: [
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/*.{j,t}s?(x)"
+      ],
+      env: {
+        jest: true
+      }
+    }
   ],
   rules: {
     'max-len': ['warn', 120, 2, {
