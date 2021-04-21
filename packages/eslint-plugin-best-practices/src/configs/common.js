@@ -22,8 +22,8 @@ module.exports = {
         '**/__tests__/*.{j,t}s?(x)',
         '**/tests/*.{j,t}s?(x)',
       ],
-      env: { jest: true }
-    }
+      env: { jest: true },
+    },
   ],
   rules: {
     'max-len': ['warn', 120, 2, {
