@@ -1,5 +1,9 @@
 # changelog
 
+## 1.3.1
+
+- Add stylelint peerDependencies
+
 ## 1.3.0
 
 - Update ESLint from 6.x to 7.x
