@@ -1,6 +1,6 @@
 {
   "name": "@iceworks/spec",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
   "main": "src/index.js",
   "files": [
@@ -32,7 +32,8 @@
   },
   "homepage": "https://github.com/ice-lab/spec#readme",
   "peerDependencies": {
-    "eslint": ">=6.8.0"
+    "eslint": ">=6.8.0",
+    "stylelint": ">=8.3.0"
   },
   "dependencies": {
     "@iceworks/eslint-plugin-best-practices": "^0.2.0",
