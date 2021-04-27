@@ -150,9 +150,21 @@ After that, you can add to your` package.json` the following code:
 
 ### Update from @ice/spec
 
-If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
+If you are using [@ice/spec](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
 
 Based on `@iceworks/spec`'s simple API you can quickly migrate your project, install and update your lint config file, the mission is completed 😁.
+
+### Usage with Node.js API
+
+If you are using spec rules in `CLIEngine` or `Linter`, Please set `cwd` to path of spec that can help ESLint find dependent plugins and configs.
+
+```js
+// CLIEngine
+new CLIEngine({ cwd: path.dirname(require.resolve('@iceworks/spec')) });
+
+// Linter
+new Linter({ cwd: path.dirname(require.resolve('@iceworks/spec')) });
+```
 
 ### Error: Cannot find module 'eslint-plugin-foo'
 

@@ -1,5 +1,9 @@
 # changelog
 
+## 1.4.0
+
+- ESLint add prettier config and plugin
+
 ## 1.3.1
 
 - Add stylelint peerDependencies

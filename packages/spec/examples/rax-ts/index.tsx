@@ -9,6 +9,11 @@ interface LogoProps {
 
 const unusedVar = 1;
 
+// prettier test
+// const a = 1; const b = 2;
+const a = 1;
+const b = 2;
+
 export default (props: LogoProps) => {
   const { uri } = props;
   const source = { uri };

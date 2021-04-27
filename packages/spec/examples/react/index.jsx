@@ -4,6 +4,11 @@ import styles from './index.module.scss';
 
 const unusedVar = 1;
 
+// prettier test
+// const a = 1; const b = 2;
+const a = 1;
+const b = 2;
+
 const PageHeader = (props) => {
   const { breadcrumbs, title, description, ...others } = props;
   return (
@@ -18,9 +23,7 @@ const PageHeader = (props) => {
 
       {title && <Typography.Text className={styles.Title}>{title}</Typography.Text>}
 
-      {description && (
-        <Typography.Text className={styles.Description}>{description}</Typography.Text>
-      )}
+      {description && <Typography.Text className={styles.Description}>{description}</Typography.Text>}
     </Box>
   );
 };

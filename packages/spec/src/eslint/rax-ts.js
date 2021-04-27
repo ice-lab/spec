@@ -2,6 +2,8 @@
 // ESlint config for Rax TypeScript project
 module.exports = {
   extends: [
+    'plugin:prettier/recommended',
+    require.resolve('eslint-config-prettier'),
     require.resolve('eslint-config-ali/typescript/rax'),
     // For some ci and jest test env, we chose require.resolve instead 'plugin:@iceworks/best-practices/rax-ts'
     require.resolve('@iceworks/eslint-plugin-best-practices/src/configs/rax-ts'),

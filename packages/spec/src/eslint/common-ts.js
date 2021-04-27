@@ -2,6 +2,8 @@
 // ESlint config for common ts project
 module.exports = {
   extends: [
+    'plugin:prettier/recommended',
+    require.resolve('eslint-config-prettier'),
     require.resolve('eslint-config-ali/typescript'),
   ],
   rules: {

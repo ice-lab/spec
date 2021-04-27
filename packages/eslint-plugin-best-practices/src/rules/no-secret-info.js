@@ -23,20 +23,18 @@ module.exports = {
     return {
       Literal: function handleRequires(node) {
         if (
-          node.value && node.parent && (
-            // var secret = 'test';
-            (node.parent.type === 'VariableDeclarator' &&
-              node.parent.id &&
-              node.parent.id.name &&
-              reg.test(node.parent.id.name.toLocaleLowerCase())
-            ) ||
+          node.value &&
+          node.parent &&
+          // var secret = 'test';
+          ((node.parent.type === 'VariableDeclarator' &&
+            node.parent.id &&
+            node.parent.id.name &&
+            reg.test(node.parent.id.name.toLocaleLowerCase())) ||
             // { secret: 'test' };
             (node.parent.type === 'Property' &&
               node.parent.key &&
               node.parent.key.name &&
-              reg.test(node.parent.key.name.toLocaleLowerCase())
-            )
-          )
+              reg.test(node.parent.key.name.toLocaleLowerCase())))
         ) {
           context.report({
             node,
