@@ -4,6 +4,10 @@
 
 - ESLint add prettier config and plugin
 
+## 1.3.2
+
+- Add [eslint-plugin-jsx-plus](https://github.com/jsx-plus/eslint-plugin-jsx-plus) support Rax JSX+.
+
 ## 1.3.1
 
 - Add stylelint peerDependencies
