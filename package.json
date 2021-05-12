@@ -10,7 +10,7 @@
     "codecov": "^3.6.1",
     "commitlint-config-ali": "^0.1.0",
     "eslint": "^7.22.0",
-    "husky": "^4.3.0",
+    "husky": "^6.0.0",
     "ice-npm-utils": "^2.0.1",
     "jest": "^24.9.0",
     "lerna": "^3.18.2",
@@ -19,18 +19,13 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
+    "prepare":"husky install",
     "setup": "lerna bootstrap --no-ci && lerna link",
     "lint": "eslint --ext .js,ts ./ --resolve-plugins-relative-to ./packages/spec",
     "prettier": "prettier **/* --write",
     "test": "jest && cd packages/spec && npm run test",
     "publish": "node ./scripts/publish",
     "ci": "npm run setup && npm run lint && npm run test"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run lint && npm run test"
-    }
   },
   "jest": {
     "coverageDirectory": "./coverage/",
