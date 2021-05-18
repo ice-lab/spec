@@ -161,6 +161,21 @@ Make a commit to check commit message:
 $ npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 ```
 
+#### Before husky v6
+
+[husky](https://github.com/typicode/husky) has breakchange from v4 to v6.
+
+Before husky v6, you can add to your `package.json` the following code:
+
+```json
+"husky": {
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+    "pre-push": "npm run lint"
+  }
+}
+```
+
 ### Update from @ice/spec
 
 If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
