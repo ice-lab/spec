@@ -26,7 +26,7 @@ First create a `.eslintrc.js` file. Then edit your config.
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getESLintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('react');
 ```
 
@@ -44,7 +44,7 @@ First create a `.stylelintrc.js` file. Then edit your config.
 // .stylelintrc.js
 const { getStylelintConfig } = require('@iceworks/spec');
 
-// getStylelintConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getStylelintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getStylelintConfig('react');
 ```
 
@@ -60,7 +60,7 @@ First create a `.prettierrc.js` file. Then edit your config.
 // .prettierrc.js
 const { getPrettierConfig } = require('@iceworks/spec');
 
-// getPrettierConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getPrettierConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getPrettierConfig('react');
 ```
 
@@ -78,7 +78,7 @@ First create a `.commitlintrc.js` file. Then edit your config.
 // .commitlintrc.js
 const { getCommitlintConfig } = require('@iceworks/spec');
 
-// getCommitlintConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getCommitlintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getCommitlintConfig('react');
 ```
 
@@ -90,7 +90,7 @@ module.exports = getCommitlintConfig('react');
 // .eslintrc.js
 const { getESLintConfig } = require('@iceworks/spec');
 
-// getESLintConfig(rule: 'rax'|'react'|'vue', customConfig?);
+// getESLintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getESLintConfig('rax', {
   // custom config it will merge into main config
   rules: {
