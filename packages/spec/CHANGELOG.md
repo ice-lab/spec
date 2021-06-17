@@ -1,5 +1,9 @@
 # changelog
 
+## 1.3.3
+
+- Update husky usage in README.md
+
 ## 1.3.2
 
 - Add [eslint-plugin-jsx-plus](https://github.com/jsx-plus/eslint-plugin-jsx-plus) support Rax JSX+.

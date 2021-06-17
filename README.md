@@ -120,20 +120,32 @@ To lint commits before they are created you can use Husky's Git hook.
 
 Install in your project `npm install husky --save-dev` or `yarn add -D husky`.
 
-After that, you can add to your` package.json` the following code:
+After that, Edit package.json > prepare script:
 
 ```json
-"husky": {
-  "hooks": {
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    "pre-push": "npm run lint"
+{
+  "scripts": {
+    "prepare":"husky install"
   }
 }
 ```
+and run it once:
 
-* `commit-msg`: check commit message
-* `pre-push`: run scripts when push
+```bash
+$ npm run prepare
+```
 
+Add a hook run scripts when commit:
+
+```bash
+$ npx husky add .husky/pre-commit "npm run lint"
+```
+
+Make a commit to check commit message:
+
+```bash
+$ npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+```
 ### Update from @ice/spec
 
 If you are using [@ice/spce](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
