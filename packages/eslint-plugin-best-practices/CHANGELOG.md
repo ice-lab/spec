@@ -1,6 +1,6 @@
 # changelog
 
-## 0.3.0
+## 0.2.9
 
 - Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
 

@@ -34,7 +34,7 @@ module.exports = {
       ignoreStrings: true,
       ignoreTemplateLiterals: true,
     }],
-    'semi': 'warn',
+    semi: 'warn',
     'eol-last': 'warn',
     'quote-props': 'warn',
     '@iceworks/best-practices/no-http-url': 'warn',

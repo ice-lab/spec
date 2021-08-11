@@ -6,6 +6,9 @@ module.exports = {
   ],
   rules: {
     // Change error to warn
+    semi: 'warn',
+    'eol-last': 'warn',
+    'quote-props': 'warn',
     'no-unused-vars': 'warn',
   },
 };

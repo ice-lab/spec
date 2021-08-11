@@ -2,7 +2,7 @@
 
 ## 1.4.0 
 
-- Update `@iceworks/eslint-plugin-best-practices` from 0.2.x to 0.3.x.
+- Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
 
 ## 1.3.2
 
