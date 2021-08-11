@@ -6,6 +6,7 @@ module.exports = deepmerge(commonConfig, {
     'max-lines': ['warn', { max: 500 }],
     'no-plusplus': 'off',
     'no-return-await': 'off',
+    '@typescript-eslint/semi': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
   },
 });

@@ -1,6 +1,6 @@
 {
   "name": "@iceworks/eslint-plugin-best-practices",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "Iceworks best practices eslint plugin.",
   "files": [
     "docs/",

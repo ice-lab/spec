@@ -1,5 +1,9 @@
 # changelog
 
+## 1.4.0 
+
+- Update `@iceworks/eslint-plugin-best-practices` from 0.2.x to 0.3.x.
+
 ## 1.3.2
 
 - Add [eslint-plugin-jsx-plus](https://github.com/jsx-plus/eslint-plugin-jsx-plus) support Rax JSX+.
