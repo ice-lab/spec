@@ -3,6 +3,7 @@
 ## 1.4.0 
 
 - Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
+- Support auto add specific rules ([eslint-plugin-rax-compile-time-miniapp](https://www.npmjs.com/package/eslint-plugin-rax-compile-time-miniapp)) for rax compile-time miniapp.
 
 ## 1.3.2
 
