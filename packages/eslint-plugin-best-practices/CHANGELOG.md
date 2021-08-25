@@ -3,6 +3,7 @@
 ## 0.2.9
 
 - Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
+- Remove `no-lowercase-component-name` for linux.
 
 ## 0.2.8
 
