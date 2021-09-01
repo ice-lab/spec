@@ -1,5 +1,9 @@
 # changelog
 
+## 0.2.9
+
+- Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
+
 ## 0.2.8
 
 - Update ESLint from 6.x to 7.x
