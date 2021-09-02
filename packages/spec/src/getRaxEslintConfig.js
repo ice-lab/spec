@@ -13,7 +13,7 @@ module.exports = function (config) {
       const buildConfig = JSON5.parse(fs.readFileSync(buildConfigFilePath, 'utf8'));
 
       const isCompileTime = (target) => (
-        buildConfig.targets.find((t) => t === target) &&
+        buildConfig.targets && buildConfig.targets.find((t) => t === target) &&
         buildConfig[target] && buildConfig[target].buildType === 'compile'
       );
 

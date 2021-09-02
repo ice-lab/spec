@@ -1,5 +1,9 @@
 # changelog
 
+## 1.4.1
+
+- Fix build.json targets config not exist error.
+
 ## 1.4.0 
 
 - Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
