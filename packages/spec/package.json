@@ -1,6 +1,6 @@
 {
   "name": "@iceworks/spec",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
   "main": "src/index.js",
   "files": [
