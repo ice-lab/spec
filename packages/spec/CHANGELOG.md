@@ -1,10 +1,14 @@
 # changelog
 
+## 1.4.2
+
+- Fix stylelint extends config merge error.
+
 ## 1.4.1
 
 - Fix build.json targets config not exist error.
 
-## 1.4.0 
+## 1.4.0
 
 - Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
 - Support auto add specific rules ([eslint-plugin-rax-compile-time-miniapp](https://www.npmjs.com/package/eslint-plugin-rax-compile-time-miniapp)) for rax compile-time miniapp.
