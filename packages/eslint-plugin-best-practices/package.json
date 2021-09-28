@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@iceworks/spec": "^1.0.0",
-    "@mdn/browser-compat-data": "^2.0.3",
+    "@mdn/browser-compat-data": "^4.0.5",
     "fs-extra": "^9.0.1",
     "glob": "^7.1.6",
     "line-column": "^1.0.2",
