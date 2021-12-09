@@ -2,7 +2,7 @@
 
 ## 1.5.0
 
-- Feat update eslint-config-ali and babel eslint support ESLint@8.x
+- Feat update eslint-config-ali、babel and typescript dependencies to support ESLint@8.x
 
 ## 1.4.2
 
