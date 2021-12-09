@@ -1,5 +1,9 @@
 # changelog
 
+## 1.5.0
+
+- Feat update eslint-config-ali and babel eslint support ESLint@8.x
+
 ## 1.4.2
 
 - Fix stylelint extends config merge error.

@@ -1,6 +1,6 @@
 {
   "name": "@iceworks/spec",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
   "main": "src/index.js",
   "files": [
@@ -39,9 +39,11 @@
     "@iceworks/eslint-plugin-best-practices": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
-    "babel-eslint": "^10.1.0",
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-react": "^7.16.0",
     "commitlint-config-ali": "^0.1.0",
-    "eslint-config-ali": "^12.0.1",
+    "eslint-config-ali": "^13.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
     "eslint-plugin-rax-compile-time-miniapp": "^1.0.0",
