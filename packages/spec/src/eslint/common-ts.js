@@ -6,10 +6,11 @@ module.exports = {
   ],
   rules: {
     // Change error to warn
-    semi: 'off',
+    'semi': 'off',
     '@typescript-eslint/semi': 'warn',
     'eol-last': 'warn',
     'quote-props': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/dot-notation': 'off',
   },
 };

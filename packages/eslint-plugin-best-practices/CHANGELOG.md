@@ -1,5 +1,8 @@
 # changelog
 
+## 0.2.10
+- Update stylistic rules `dot-notation` and `@typescript-eslint/dot-notation` from error to off.
+
 ## 0.2.9
 
 - Update stylistic rules `semi` `eol-last` and `quote-props` from error to warn.
