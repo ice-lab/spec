@@ -27,6 +27,7 @@ module.exports = {
     },
   ],
   rules: {
+    'dot-notation': 'off',
     'max-len': ['warn', 120, 2, {
       ignoreUrls: true,
       ignoreComments: false,
@@ -34,7 +35,7 @@ module.exports = {
       ignoreStrings: true,
       ignoreTemplateLiterals: true,
     }],
-    semi: 'warn',
+    'semi': 'warn',
     'eol-last': 'warn',
     'quote-props': 'warn',
     '@iceworks/best-practices/no-http-url': 'warn',

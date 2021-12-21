@@ -1,5 +1,10 @@
 # changelog
 
+## 1.5.0
+
+- Feat update eslint-config-ali, babel and typescript dependencies to support ESLint@8.x.
+- Update stylistic rules `dot-notation` and `@typescript-eslint/dot-notation` from error to off.
+
 ## 1.4.2
 
 - Fix stylelint extends config merge error.
