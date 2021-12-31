@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const docsUrl = require('../docsUrl');
 
 const RULE_NAME = 'no-secret-info';

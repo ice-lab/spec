@@ -1,8 +1,5 @@
 module.exports = {
-  plugins: [
-    'prettier',
-    '@iceworks/best-practices',
-  ],
+  plugins: ['prettier', '@iceworks/best-practices'],
   overrides: [
     {
       files: ['package.json'],
@@ -21,24 +18,25 @@ module.exports = {
       },
     },
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/*.{j,t}s?(x)',
-        '**/test/*.{j,t}s?(x)',
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/*.{j,t}s?(x)', '**/test/*.{j,t}s?(x)'],
       env: { jest: true },
     },
   ],
   rules: {
+    semi: 'warn',
     'dot-notation': 'off',
-    'max-len': ['warn', 120, 2, {
-      ignoreUrls: true,
-      ignoreComments: false,
-      ignoreRegExpLiterals: true,
-      ignoreStrings: true,
-      ignoreTemplateLiterals: true,
-    }],
-    'semi': 'warn',
+    'max-len': [
+      'warn',
+      120,
+      2,
+      {
+        ignoreUrls: true,
+        ignoreComments: false,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
+    ],
     'eol-last': 'warn',
     'quote-props': 'warn',
     'prettier/prettier': 'warn',
