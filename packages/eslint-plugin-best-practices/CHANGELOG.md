@@ -1,5 +1,8 @@
 # changelog
 
+## 0.3.0
+- Add `eslint-plugin-prettier`
+
 ## 0.2.10
 - Update stylistic rules `dot-notation` and `@typescript-eslint/dot-notation` from error to off.
 

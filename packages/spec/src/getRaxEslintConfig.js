@@ -9,13 +9,13 @@ module.exports = function (config) {
     const buildConfigFilePath = path.join(process.cwd(), 'build.json');
 
     if (fs.existsSync(buildConfigFilePath)) {
-
       const buildConfig = JSON5.parse(fs.readFileSync(buildConfigFilePath, 'utf8'));
 
-      const isCompileTime = (target) => (
-        buildConfig.targets && buildConfig.targets.find((t) => t === target) &&
-        buildConfig[target] && buildConfig[target].buildType === 'compile'
-      );
+      const isCompileTime = (target) =>
+        buildConfig.targets &&
+        buildConfig.targets.find((t) => t === target) &&
+        buildConfig[target] &&
+        buildConfig[target].buildType === 'compile';
 
       // At present, only miniapp and wechat-miniprogram support build for compile-time
       if (isCompileTime('miniapp') || isCompileTime('wechat-miniprogram')) {
