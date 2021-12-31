@@ -10,3 +10,15 @@ export default (props) => {
   const source = { uri };
   return <Image className="logo" source={source} />;
 };
+
+// prettier test
+const a = 1; const b = 2;
+const c = {
+  a: [
+    {
+      a: 1,
+      b:
+        2,
+    },
+  ],
+}

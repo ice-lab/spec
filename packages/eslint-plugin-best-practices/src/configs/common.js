@@ -1,5 +1,8 @@
 module.exports = {
-  plugins: ['@iceworks/best-practices'],
+  plugins: [
+    'prettier',
+    '@iceworks/best-practices',
+  ],
   overrides: [
     {
       files: ['package.json'],
@@ -38,6 +41,7 @@ module.exports = {
     'semi': 'warn',
     'eol-last': 'warn',
     'quote-props': 'warn',
+    'prettier/prettier': 'warn',
     '@iceworks/best-practices/no-http-url': 'warn',
     '@iceworks/best-practices/no-js-in-ts-project': 'warn',
     '@iceworks/best-practices/no-lowercase-component-name': 'warn',
