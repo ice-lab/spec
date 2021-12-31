@@ -1,5 +1,9 @@
 # changelog
 
+## 1.5.1
+
+- Feat add `eslint-plugin-prettier`, and set `"prettier/prettier": "warn"`.
+
 ## 1.5.0
 
 - Feat update eslint-config-ali, babel and typescript dependencies to support ESLint@8.x.
