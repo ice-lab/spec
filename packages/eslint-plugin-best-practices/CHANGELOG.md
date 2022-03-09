@@ -1,5 +1,7 @@
 # changelog
 
+## 0.2.11
+- Remove `no-secret-info`. 
 ## 0.2.10
 - Update stylistic rules `dot-notation` and `@typescript-eslint/dot-notation` from error to off.
 

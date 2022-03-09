@@ -41,7 +41,6 @@ module.exports = {
     '@iceworks/best-practices/no-http-url': 'warn',
     '@iceworks/best-practices/no-js-in-ts-project': 'warn',
     '@iceworks/best-practices/no-lowercase-component-name': 'warn',
-    '@iceworks/best-practices/no-secret-info': 'error',
     '@iceworks/best-practices/recommend-add-line-height-unit': 'error',
     '@iceworks/best-practices/recommend-functional-component': 'warn',
     '@iceworks/best-practices/recommend-polyfill': 'warn',
