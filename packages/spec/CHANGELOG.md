@@ -1,5 +1,9 @@
 # changelog
 
+## 1.6.0
+
+- Feat update peerDependencies ESLint version to `>=7.5.0`.
+
 ## 1.5.0
 
 - Feat update eslint-config-ali, babel and typescript dependencies to support ESLint@8.x.
