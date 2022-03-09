@@ -38,7 +38,6 @@ module.exports = getESLintConfig('rax', {
 - [`no-http-url`](https://github.com/ice-lab/spec/tree/master/packages/eslint-plugin-best-practices/docs/rules/no-http-url.md) Recommended the http url switch to HTTPS.
 - [`no-js-in-ts-project`](https://github.com/ice-lab/spec/tree/master/packages/eslint-plugin-best-practices/docs/rules/no-js-in-ts-project.md) It is not recommended to use js and ts files at the same time.
 - [`no-lowercase-component-name`](https://github.com/ice-lab/spec/tree/master/packages/eslint-plugin-best-practices/docs/rules/no-lowercase-component-name.md) It is not recommended to name components in lower case.
-- [`no-secret-info`](https://github.com/ice-lab/spec/tree/master/packages/eslint-plugin-best-practices/docs/rules/no-secret-info.md) Don't show `password` `token` and `secret` in plain text.
 - [`recommend-add-line-height-unit`](https://github.com/ice-lab/spec/tree/master/packages/eslint-plugin-best-practices/docs/rules/recommend-add-line-height-unit.md) Recommended to add unit for line-height which is more than 5.
 - [`recommend-functional-component`](https://github.com/ice-lab/spec/tree/master/packages/eslint-plugin-best-practices/docs/rules/recommend-functional-component.md) It is not recommended to use class component.
 - [`recommend-polyfill`](https://github.com/ice-lab/spec/tree/master/packages/eslint-plugin-best-practices/docs/rules/recommend-polyfill.md) Recommend API which not supported in iOS 9 to add polyfill file.
