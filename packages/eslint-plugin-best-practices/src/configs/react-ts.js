@@ -12,5 +12,7 @@ module.exports = deepmerge(commonConfig, {
     '@typescript-eslint/dot-notation': 'off',
     '@typescript-eslint/semi': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
+    'no-redeclare': 'off',
+    '@typescript-eslint/no-redeclare': ['error'],
   },
 });
