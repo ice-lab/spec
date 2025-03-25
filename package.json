@@ -1,34 +1,35 @@
 {
-  "name": "iceworks-spec",
+  "name": "ice-spec-monorepo",
   "private": true,
-  "devEngines": {
-    "node": "8.x || 9.x || 10.x || 11.x",
-    "npm": "6.x"
-  },
+  "type": "module",
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "codecov": "^3.6.1",
-    "commitlint-config-ali": "^0.1.0",
-    "eslint": "^7.22.0",
-    "husky": "^7.0.1",
+    "@ice/pkg": "^1.6.0",
+    "@ice/spec": "workspace:*",
+    "eslint": "^9.0.0",
+    "husky": "^9.1.6",
     "ice-npm-utils": "^2.0.1",
-    "jest": "^24.9.0",
-    "lerna": "^3.18.2",
-    "prettier": "^2.1.0",
-    "stylelint": "^13.2.0",
-    "typescript": "^3.5.3"
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.0.0",
+    "stylelint": "^16.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.4"
   },
   "scripts": {
-    "prepare": "husky install",
-    "setup": "rm -rf ./packages/*/node_modules && lerna bootstrap --no-ci && lerna link",
-    "lint": "eslint --ext .js,.jsx,.tsx,.ts ./ --resolve-plugins-relative-to ./packages/spec",
+    "build": "pnpm run -r build",
+    "prepare": "husky",
+    "lint": "eslint ./",
     "prettier": "prettier **/* --write",
-    "test": "jest && cd packages/spec && npm run test",
-    "publish": "node ./scripts/publish",
-    "ci": "npm run setup && npm run lint && npm run test"
+    "test": "vitest run"
   },
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
+  "packageManager": "pnpm@9.6.0",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss,less}": [
+      "prettier --write"
+    ]
   }
 }

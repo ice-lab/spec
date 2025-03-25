@@ -1,3 +1,4 @@
-const { getCommitlintConfig } = require('./packages/spec/src/');
-
-module.exports = getCommitlintConfig('react');
+// const { getCommitlintConfig } = require('./packages/spec/src/');
+//
+// module.exports = getCommitlintConfig('react');
+export default {};

@@ -72,12 +72,7 @@ module.exports = {
           const supports = target.__compat.support;
           for (let i = 0, l = Object.keys(targetBrowsers).length; i < l; i++) {
             const browser = Object.keys(targetBrowsers)[i];
-            if (
-              semver.satisfies(
-                `${targetBrowsers[browser]}.0.0`,
-                `<${supports[browser].version_added}`,
-              )
-            ) {
+            if (semver.satisfies(`${targetBrowsers[browser]}.0.0`, `<${supports[browser].version_added}`)) {
               context.report({
                 node,
                 messageId: 'recommendPolyfill',
@@ -89,7 +84,7 @@ module.exports = {
               break;
             }
           }
-        } catch (e) {
+        } catch (_) {
           // ignore
         }
       } else if (extraTargetProperties[property]) {
@@ -153,7 +148,7 @@ module.exports = {
             handleReport(node, object, property);
           }
         }
-      } catch (e) {
+      } catch (_) {
         // ignore
       }
     };

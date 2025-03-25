@@ -1,0 +1,8 @@
+{
+  "name": "@ice/spec-example-common",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "@ice/spec": "workspace:*"
+  }
+}

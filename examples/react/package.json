@@ -1,0 +1,12 @@
+{
+  "name": "@ice/spec-example-react",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "lint:code": "eslint .",
+    "lint:style": "stylelint src/**/*.{css,scss,less}"
+  },
+  "devDependencies": {
+    "@ice/spec": "workspace:*"
+  }
+}
