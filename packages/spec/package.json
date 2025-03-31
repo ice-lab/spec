@@ -1,6 +1,6 @@
 {
   "name": "@ice/spec",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.1",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in ice project.",
   "type": "module",
   "main": "./es2017/index.js",
@@ -40,6 +40,7 @@
     "@iceworks/eslint-plugin-best-practices": "workspace:^",
     "@swc/helpers": "^0.5.15",
     "commitlint-config-ali": "^0.1.0",
+    "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
     "eslint-plugin-prettier": "^5.2.5",
