@@ -1,6 +1,6 @@
 {
   "name": "@ice/spec",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in ice project.",
   "type": "module",
   "main": "./es2017/index.js",

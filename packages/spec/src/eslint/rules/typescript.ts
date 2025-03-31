@@ -83,7 +83,7 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     '@typescript-eslint/consistent-type-assertions': [
       'error',
       {
-        arrayLiteralTypeAssertions: 'allow-as-parameter',
+        arrayLiteralTypeAssertions: 'allow',
         assertionStyle: 'as',
         objectLiteralTypeAssertions: 'allow',
       },
@@ -452,7 +452,7 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md
      */
     'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': 'error',
+    '@typescript-eslint/no-shadow': 'warn',
 
     /**
      * 【推荐】不建议将 this 赋值给其他变量，解构赋值除外
