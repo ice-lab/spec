@@ -83,9 +83,6 @@ importers:
       '@eslint/js':
         specifier: ^9.9.0
         version: 9.14.0
-      '@iceworks/eslint-plugin-best-practices':
-        specifier: workspace:^
-        version: link:../eslint-plugin-best-practices
       '@swc/helpers':
         specifier: ^0.5.15
         version: 0.5.15
