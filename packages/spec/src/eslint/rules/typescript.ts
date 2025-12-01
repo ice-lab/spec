@@ -188,10 +188,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     'no-array-constructor': 'off',
     '@typescript-eslint/no-array-constructor': 'error',
 
-
-
-
-
     /**
      * 【强制】禁止出现空函数，普通函数（非 async/await/generator）、箭头函数、类上的方法除外
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md
@@ -217,16 +213,12 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      */
     '@typescript-eslint/no-explicit-any': 'warn',
 
-
     /**
      * 【关闭】禁止不必要的小括号
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-parens.md
      */
     'no-extra-parens': 'off',
     '@typescript-eslint/no-extra-parens': 'off',
-
-
-
 
     /**
      * 【关闭】禁止在 class 外使用 this
@@ -235,16 +227,12 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      */
     'no-invalid-this': 'off',
 
-
-    // @typescript-eslint/no-loss-of-precision needs eslint version >= v7
-
     /**
      * 【关闭】禁止使用 magic numbers
      * @extend
      */
     'no-magic-numbers': 'off',
     '@typescript-eslint/no-magic-numbers': 'off',
-
 
     /**
      * 【强制】禁止使用 namespace 来定义命名空间，但允许使用 declare namespace 定义外部命名空间
@@ -260,8 +248,7 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     /**
      * 【推荐】不建议使用 require 引入模块，使用 import
      */
-    '@typescript-eslint/no-require-imports': 'error',
-
+    '@typescript-eslint/no-require-imports': 'warn',
 
     /**
      * 【推荐】不建议将 this 赋值给其他变量，解构赋值除外
@@ -750,7 +737,6 @@ export const typescriptTypeCheckedConfig = tslint.config(...tslint.configs.recom
      * 【关闭】条件判断必须传入布尔值
      */
     '@typescript-eslint/strict-boolean-expressions': 'off',
-
 
     /**
      * 【关闭】方法调用时需要绑定到正确的 this 上
