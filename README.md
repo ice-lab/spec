@@ -1,108 +1,94 @@
 # @ice/spec
 
-Easy to use **eslint**(support TypeScript) / **stylelint** / **prettier** / **commitlint** in [ice](https://ice.work/) and react project. And spec means specification.
+在 [ice](https://ice.work/) 和 React 项目中轻松使用 **eslint**（支持 TypeScript）、**stylelint**、**prettier** 和 **commitlint** 规范。
 
-## Install
+## 安装
 
 ```bash
 $ npm i --save-dev @ice/spec eslint stylelint prettier @commitlint/cli
 ```
 
-PS: You don't need to install other eslint plugins and parsers.
+注意：你不需要安装其他 eslint 插件和解析器。
 
-## Usage
+## 使用
 
 ### ESLint
 
-> NOTE: from @ice/spec 2.0.0, it's requires eslint >= 8.(support flat config)
+> 注意：从 @ice/spec 2.0.0 开始，需要保证 eslint >= 8.21（支持扁平化配置）
 
-#### 1. Create configuration file
+#### 1. 创建配置文件
 
-First create a `eslint.config.js` file. Then edit your config.
+首先创建一个 `eslint.config.js` 文件。然后编辑你的配置。
 
-#### 2. Update config
-
-[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
+#### 2. 更新配置
 
 ```js
 // eslint.config.js
-import { getESLintConfig } from '@ice/spec/eslint';
+import { getConfig } from '@ice/spec/eslint';
 
-export default getESLintConfig();
+export default getConfig({});
 ```
+
+`getConfig` 支持各种参数，列表如下：
+
+| 参数            | 类型                                                   | 默认值  | 描述                                              |
+| --------------- | ------------------------------------------------------ | ------- | ------------------------------------------------- |
+| preset          | `'ice' \| 'pkg' \| 'spark-framework' \| 'spark-child'` | `'ice'` | 框架预设                                          |
+| files           | `string[]`                                             | -       | 文件匹配模式                                      |
+| prettier        | `boolean`                                              | `true`  | 启用 prettier 规则                                |
+| react           | `boolean`                                              | `true`  | 启用 react 规则                                   |
+| tsconfigRootDir | `string`                                               | -       | tsconfig 项目目录，用于启用类型检查规则           |
+| jsxPlus         | `boolean`                                              | `false` | 启用 jsx-plus eslint 规则，仅在 eslint 8.x 中可用 |
 
 ### stylelint
 
-#### 1. Create configuration file
+#### 1. 创建配置文件
 
-First create a `.stylelintrc.js` file. Then edit your config.
+首先创建一个 `.stylelintrc.js` 文件。然后编辑你的配置。
 
-#### 2. Update config
+#### 2. 更新配置
 
-[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/stylelint/react.js) base on [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
+[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/stylelint/react.js) 基于 [stylelint-config-ali](https://www.npmjs.com/package/stylelint-config-ali)
 
 ```js
-// .stylelintrc.js
-const { getStylelintConfig } = require('@ice/spec/stylelint');
+const { getConfig } = require('@ice/spec/stylelint');
 
-// getStylelintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
-module.exports = getStylelintConfig('react');
+module.exports = getConfig();
 ```
 
-### prettier [rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/prettier/react.js)
+### prettier
 
-#### 1. Create configuration file
+#### 1. 创建配置文件
 
-First create a `.prettierrc.js` file. Then edit your config.
+首先创建一个 `.prettierrc.js` 文件。然后编辑你的配置。
 
-#### 2. Update config
+#### 2. 更新配置
 
 ```js
-// .prettierrc.js
-const { getPrettierConfig } = require('@ice/spec/prettier');
+import { getConfig } from '@ice/spec/prettier';
 
-// getPrettierConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
-module.exports = getPrettierConfig();
+export default getConfig();
 ```
 
 ### commitlint
 
-#### 1. Create configuration file
+#### 1. 创建配置文件
 
-First create a `.commitlintrc.js` file. Then edit your config.
+首先创建一个 `.commitlintrc.js` 文件。然后编辑你的配置。
 
-#### 2. Update config
-
-[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/commitlint/react.js) base on [commitlint-config-ali](https://www.npmjs.com/package/commitlint-config-ali)
+#### 2. 更新配置
 
 ```js
-// .commitlintrc.js
-const { getCommitlintConfig } = require('@iceworks/spec');
+import { getConfig } from '@ice/spec/stylelint';
 
-// getCommitlintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
-module.exports = getCommitlintConfig('react');
+export default getConfig();
 ```
 
-## FAQ
+## 常见问题
 
-### Custom config
+### package.json 脚本
 
-```js
-// .eslintrc.js
-const { getESLintConfig } = require('@iceworks/spec');
-
-// getESLintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
-module.exports = getESLintConfig('rax', {
-  // custom config it will merge into main config
-  rules: {
-    // ...
-  },
-});
-```
-
-### package.json scripts
-
-Add `scripts` in your `package.json`, example:
+在你的 `package.json` 中添加 `scripts`，示例：
 
 ```json
 "scripts": {
@@ -113,44 +99,32 @@ Add `scripts` in your `package.json`, example:
 }
 ```
 
-Then use `npm run lint` check your project, ues `npm run prettier` update your code.
+然后使用 `npm run lint` 检查你的项目，使用 `npm run prettier` 更新你的代码。
 
-### Git hooks
+### 提交前自动格式化并检查
 
-To lint commits before they are created you can use Husky's Git hook.
+利用 [husky](https://www.npmjs.com/package/husky) 和 [lint-staged](https://www.npmjs.com/package/lint-staged) 分别实现 Git Hooks 代理以及变更文件列表。
 
-Install in your project `npm install husky --save-dev` or `yarn add -D husky`.
+安装 husky 及 lint-staged 依赖：
 
-After that, we recommend you to see [husky docs](https://www.npmjs.com/package/husky), then create "`commit-msg`" and "`pre-commit`" config.
-
-### Update from @ice/spec
-
-If you are using [@ice/spec](https://www.npmjs.com/package/@ice/spec) in your project, we recommend use `@iceworks/spec` to get better maintainability and faster response to lint rules support.
-
-Based on `@iceworks/spec`'s simple API you can quickly migrate your project, install and update your lint config file, the mission is completed 😁.
-
-## Develop
-
-### Run Test
-
-```
-npm run test
+```bash
+npm install --save-dev husky lint-staged
 ```
 
-run test for specific component
+然后参考官网文档安装并配置 husky/lint-staged，主要是要修改 scripts 以及触发脚本的修改。
 
-```
-npm run test -- packages/spec
+其中 lint-staged 的触发配置如下：
+
+```json
+{
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["eslint --fix"],
+    "*.{scss,less,css}": ["stylelint --fix", "prettier --write"],
+    "*.{md,json}": ["prettier --write"]
+  }
+}
 ```
 
-### Run Prettier
+这样配置后，在每次提交时，lint-staged 会自动对暂存区的文件运行指定的检查和格式化命令。
 
-```
-npm run prettier
-```
-
-### Run Lint
-
-```
-npm run lint
-```
+> 当然如果你希望全量检查而不是仅仅针对变更文件变化，可以只使用 husky 而非 lint-staged

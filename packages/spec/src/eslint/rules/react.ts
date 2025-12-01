@@ -110,9 +110,6 @@ const config = {
       },
     ],
 
-    // 本条废弃，用新规则代替 react/jsx-sort-props
-    'react/jsx-sort-prop-types': 'off',
-
     // 属性按首字母排序
     'react/jsx-sort-props': [
       'off',
@@ -139,6 +136,183 @@ const config = {
     // @unessential
     'react/no-deprecated': 'error',
 
+    // 多行的 JSX 标签需用小括号包裹
+    // @unessential
+    'react/jsx-wrap-multilines': [
+      'error',
+      {
+        declaration: true,
+        assignment: true,
+        return: true,
+        arrow: true,
+      },
+    ],
+
+    // 设置第一个属性的位置。multiline-multiprop：如果JSX标签占用多行并且有多个属性，则第一个属性应始终放在新行上
+    // @unessential
+    'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
+
+    // 不要在 JSX 属性的等号两边加空格
+    // @unessential
+    'react/jsx-equals-spacing': ['error', 'never'],
+
+    // JSX 使用 2 个空格缩进
+    // @unessential
+    'react/jsx-indent': ['error', 2],
+
+    // 不要单独使用 target='_blank'
+    'react/jsx-no-target-blank': 'warn',
+
+    // 指定 React 组件的文件扩展名
+    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.js', '.tsx', '.ts', '.vue'] }],
+
+    // JSX 语句的文本节点中不要使用注释字符串（例如，以//或/ *开头）
+    'react/jsx-no-comment-textnodes': 'error',
+
+    // 禁止使用 ReactDOM.render 的返回值
+    'react/no-render-return-value': 'error',
+
+    // 禁止某些特定的 prop 命名，只对组件生效，DOM节点不生效
+    'react/forbid-component-props': ['off', { forbid: [] }],
+
+    // 禁止某些特定的元素命名
+    'react/forbid-elements': ['off', { forbid: [] }],
+
+    // 禁止在有子节点的组件或 DOM 元素中使用 dangerouslySetInnerHTML 属性
+    'react/no-danger-with-children': 'error',
+
+    // 不限制其是否被真正使用，是否被真正使用依赖 typescript 判断
+    'react/no-unused-prop-types': 'off',
+
+    // style 的属性值必须是一个对象
+    'react/style-prop-object': 'error',
+
+    // 标签中禁止出现无意义字符，比如 > " } '
+    'react/no-unescaped-entities': 'error',
+
+    // 禁止将 children 作为属性名
+    'react/no-children-prop': 'error',
+
+    // 自闭合标签的斜线前有且仅有一个空格
+    // @unessential
+    'react/jsx-tag-spacing': [
+      'error',
+      {
+        closingSlash: 'never',
+        beforeSelfClosing: 'always',
+        afterOpening: 'never',
+      },
+    ],
+
+    // 不要用数组索引作为 map 元素的 key
+    'react/no-array-index-key': 'warn',
+
+    // 如果属性没有 isRequired 类型检查，需要在 defaultProps 内对其赋值
+    'react/require-default-props': 'off',
+
+    // 禁止使用其他组件的prop类型，除非有明确的导入/导出
+    'react/forbid-foreign-prop-types': 'off',
+
+    // HTML 自闭标签不能有子节点
+    'react/void-dom-elements-no-children': 'error',
+
+    // defaultProps 需要与 propTypes 相匹配
+    'react/default-props-match-prop-types': ['warn', { allowRequiredDefaults: false }],
+
+    // 布尔类型的属性的命名约定，建议用 is 或 has 前缀
+    'react/boolean-prop-naming': 'off',
+
+    // 禁止大小写拼写错误，该检测规则未写入规约
+    'react/no-typos': 'error',
+
+    // JSX 属性或子元素强制使用花括号或禁止使用不必要的花括号
+    'react/jsx-curly-brace-presence': 'off',
+
+    // 强制在 JSX 属性和表达式中的花括号内使用一致的换行符
+    'react/jsx-curly-newline': 'off',
+
+    // 强制或禁止 JSX 元素和表达式后的换行
+    'react/jsx-newline': 'off',
+
+    // 要求 button 元素有明确的 type 属性
+    'react/button-has-type': 'off',
+
+    // 强制 checked 属性配合 onChange 或 readonly 使用
+    'react/checked-requires-onchange-or-readonly': 'off',
+
+    // 强制一致地使用 props、state 和 context 的解构赋值
+    'react/destructuring-assignment': 'off',
+
+    // 要求所有 forwardRef 组件包含 ref 参数
+    'react/forward-ref-uses-ref': 'off',
+
+    // 强制函数组件使用特定的函数类型
+    'react/function-component-definition': 'off',
+
+    // 确保 useState 钩子的解构和对称命名
+    'react/hook-use-state': 'off',
+
+    // 强制 iframe 元素有 sandbox 属性
+    'react/iframe-missing-sandbox': 'off',
+
+    // 强制或禁止 JSX 子元素之间的空格
+    'react/jsx-child-element-spacing': 'off',
+
+    // 强制 React fragments 使用简写或标准形式
+    'react/jsx-fragments': 'off',
+
+    // 强制 JSX 最大深度限制
+    'react/jsx-max-depth': 'off',
+
+    // 禁止 JSX context provider 的值导致不必要的重新渲染
+    'react/jsx-no-constructed-context-values': 'off',
+
+    // 禁止可能导致渲染问题的泄漏值
+    'react/jsx-no-leaked-render': 'off',
+
+    // 禁止使用 javascript: 协议的 URL
+    'react/jsx-no-script-url': 'off',
+
+    // 禁止不必要的 Fragment 组件
+    'react/jsx-no-useless-fragment': 'off',
+
+    // 每行只允许一个 JSX 表达式
+    'react/jsx-one-expression-per-line': 'off',
+
+    // 禁止 JSX props 多次扩展同一个标识符
+    'react/jsx-props-no-spread-multi': 'off',
+
+    // 禁止在 JSX 中使用 props 扩展
+    'react/jsx-props-no-spreading': 'off',
+
+    // 禁止相邻的内联元素之间没有空格分隔
+    'react/no-adjacent-inline-elements': 'off',
+
+    // 禁止使用无效的 HTML 属性
+    'react/no-invalid-html-attribute': 'off',
+
+    // 强制不在 React 元素中使用命名空间
+    'react/no-namespace': 'off',
+
+    // 禁止使用引用类型变量作为函数组件的默认 prop
+    'react/no-object-type-as-default-prop': 'off',
+
+    // 禁止在组件内部创建不稳定的嵌套组件
+    'react/no-unstable-nested-components': 'off',
+
+    // 优先使用精确的 propTypes 定义
+    'react/prefer-exact-props': 'off',
+
+    // 强制 props 是只读的
+    'react/prefer-read-only-props': 'off',
+
+    // ==========================
+    // Class Component Rules
+    // ==========================
+
+    // 不要在 setState 中使用 this.state
+    'react/no-access-state-in-setstate': 'error',
+
     // 不要在 componentWillUpdate 内改变 state 值
     'react/no-will-update-set-state': 'error',
 
@@ -154,14 +328,33 @@ const config = {
     // 禁止使用 setState
     'react/no-set-state': 'off',
 
-    // 使用 ref 回调函数或 React.createRef()，不要使用字符串
-    'react/no-string-refs': 'error',
+    // 生命周期方法应该是原型上的方法，而不是类字段
+    'react/no-arrow-function-lifecycle': 'off',
 
-    // 不要在无状态组件中使用 this
-    'react/no-this-in-sfc': 'error',
+    // 不要使用 findDOMNode，严格模式下已经弃用
+    // @unessential
+    'react/no-find-dom-node': 'error',
 
-    // 小程序环境下，关闭这个限制，类型交由 TypeScript 限制
-    'react/no-unknown-property': 'off',
+    // 禁止在 componentDidMount 中使用 setState
+    'react/no-did-mount-set-state': 'off',
+
+    // 禁止在 componentDidUpdate 中使用 setState
+    'react/no-did-update-set-state': 'off',
+
+    // 在扩展 React.PureComponent 时禁止使用 shouldComponentUpdate
+    'react/no-redundant-should-component-update': 'error',
+
+    // 声明的 state 必须被使用
+    'react/no-unused-state': 'error',
+
+    // 禁止使用不安全的生命周期方法
+    'react/no-unsafe': 'off',
+
+    // 禁止声明未使用的类组件方法
+    'react/no-unused-class-component-methods': 'off',
+
+    // 组件必须包含 shouldComponentUpdate 或者 PureRenderMixin
+    'react/require-optimization': ['off', { allowDecorators: [] }],
 
     // 使用 class extends React.Component ，而不是 React.createClass
     'react/prefer-es6-class': ['error', 'always'],
@@ -169,24 +362,8 @@ const config = {
     // 当未使用生命周期方法、setState 或者 ref，使用无状态函数定义组件
     'react/prefer-stateless-function': 'off',
 
-    // prop 需要 propTypes 验证类型
-    'react/prop-types': [
-      'warn',
-      {
-        ignore: [],
-        customValidators: [],
-        skipUndeclared: false,
-      },
-    ],
-
-    // 防止 JSX 中未引入 React
-    'react/react-in-jsx-scope': 'off',
-
-    // render 方法必须要有返回值
-    'react/require-render-return': 'error',
-
-    // 无子元素的标签需写成自闭合标签
-    'react/self-closing-comp': 'error',
+    // 强制 defaultProps 声明按字母顺序排序
+    'react/sort-default-props': 'off',
 
     // 组件方法排序
     'react/sort-comp': [
@@ -231,116 +408,11 @@ const config = {
       },
     ],
 
-    // 多行的 JSX 标签需用小括号包裹
-    // @unessential
-    'react/jsx-wrap-multilines': [
-      'error',
-      {
-        declaration: true,
-        assignment: true,
-        return: true,
-        arrow: true,
-      },
-    ],
+    // 强制类组件 state 的初始化样式
+    'react/state-in-constructor': 'off',
 
-    // 设置第一个属性的位置。multiline-multiprop：如果JSX标签占用多行并且有多个属性，则第一个属性应始终放在新行上
-    // @unessential
-    'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
-
-    // 不要在 JSX 属性的等号两边加空格
-    // @unessential
-    'react/jsx-equals-spacing': ['error', 'never'],
-
-    // JSX 使用 2 个空格缩进
-    // @unessential
-    'react/jsx-indent': ['error', 2],
-
-    // 不要单独使用 target='_blank'
-    'react/jsx-no-target-blank': 'warn',
-
-    // 不要在 setState 中使用 this.state
-    'react/no-access-state-in-setstate': 'error',
-
-    // 指定 React 组件的文件扩展名
-    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.js', '.tsx', '.ts', '.vue'] }],
-
-    // JSX 语句的文本节点中不要使用注释字符串（例如，以//或/ *开头）
-    'react/jsx-no-comment-textnodes': 'error',
-
-    // 禁止使用 ReactDOM.render 的返回值
-    'react/no-render-return-value': 'error',
-
-    // 组件必须包含 shouldComponentUpdate 或者 PureRenderMixin
-    'react/require-optimization': ['off', { allowDecorators: [] }],
-
-    // 不要使用 findDOMNode，严格模式下已经弃用
-    // @unessential
-    'react/no-find-dom-node': 'error',
-
-    // 禁止某些特定的 prop 命名，只对组件生效，DOM节点不生效
-    'react/forbid-component-props': ['off', { forbid: [] }],
-
-    // 禁止某些特定的元素命名
-    'react/forbid-elements': ['off', { forbid: [] }],
-
-    // 禁止在有子节点的组件或 DOM 元素中使用 dangerouslySetInnerHTML 属性
-    'react/no-danger-with-children': 'error',
-
-    // 不限制其是否被真正使用，是否被真正使用依赖 typescript 判断
-    'react/no-unused-prop-types': 'off',
-
-    // style 的属性值必须是一个对象
-    'react/style-prop-object': 'error',
-
-    // 标签中禁止出现无意义字符，比如 > " } '
-    'react/no-unescaped-entities': 'error',
-
-    // 禁止将 children 作为属性名
-    'react/no-children-prop': 'error',
-
-    // 自闭合标签的斜线前有且仅有一个空格
-    // @unessential
-    'react/jsx-tag-spacing': [
-      'error',
-      {
-        closingSlash: 'never',
-        beforeSelfClosing: 'always',
-        afterOpening: 'never',
-      },
-    ],
-
-    // 该条废弃，被替代为 jsx-tag-spacing
-    'react/jsx-space-before-closing': ['off', 'always'],
-
-    // 不要用数组索引作为 map 元素的 key
-    'react/no-array-index-key': 'warn',
-
-    // 如果属性没有 isRequired 类型检查，需要在 defaultProps 内对其赋值
-    'react/require-default-props': 'off',
-
-    // 禁止使用其他组件的prop类型，除非有明确的导入/导出
-    'react/forbid-foreign-prop-types': 'off',
-
-    // HTML 自闭标签不能有子节点
-    'react/void-dom-elements-no-children': 'error',
-
-    // defaultProps 需要与 propTypes 相匹配
-    'react/default-props-match-prop-types': ['warn', { allowRequiredDefaults: false }],
-
-    // 在扩展 React.PureComponent 时禁止使用 shouldComponentUpdate
-    'react/no-redundant-should-component-update': 'error',
-
-    // 声明的 state 必须被使用
-    'react/no-unused-state': 'error',
-
-    // 布尔类型的属性的命名约定，建议用 is 或 has 前缀
-    'react/boolean-prop-naming': 'off',
-
-    // 禁止大小写拼写错误，该检测规则未写入规约
-    'react/no-typos': 'error',
-
-    // JSX 属性或子元素强制使用花括号或禁止使用不必要的花括号
-    'react/jsx-curly-brace-presence': 'off',
+    // 强制 React 组件静态属性应该放置的位置
+    'react/static-property-placement': 'off',
 
     // Checks rules of Hooks
     // @link https://reactjs.org/docs/hooks-rules.html

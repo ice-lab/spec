@@ -6,6 +6,8 @@ import * as tsConfigs from './rules/typescript.js';
 import importConfig from './rules/import.js';
 import prettierConfig from './rules/prettier.js';
 import { PresetLinterConfigs } from './types.js';
+import jsxPlusPlugin from 'eslint-plugin-jsx-plus'
+import type {} from 'eslint-plugin-react'
 
 const configs = {};
 
@@ -35,16 +37,25 @@ export interface ConfigOptions {
    */
   react?: boolean;
 
+  /**
+   * The tsconfig project dir, use it to enable type-checked lint rules
+   */
   tsconfigRootDir?: string;
+
+  /**
+   * Enable jsx-plus eslint rules, only works in eslint 8.x limited by plugin
+   * @default false
+   */
+  jsxPlus?: boolean
 }
 
-function getConfig(options: ConfigOptions = {}) {
-  const { preset = 'ice' } = options;
+export function getConfig(options: ConfigOptions = {}) {
+  const { preset = 'ice', react = true, prettier = true, jsxPlus = false } = options;
   const configArray: Linter.Config[] = [commonConfig];
   if (commonPresetLinterConfigs[preset]) {
     configArray.push(commonPresetLinterConfigs[preset]);
   }
-  if (options?.react !== false) {
+  if (react) {
     configArray.push(reactConfig);
   }
 
@@ -66,13 +77,20 @@ function getConfig(options: ConfigOptions = {}) {
 
   configArray.push(...importConfig);
 
+  if (jsxPlus) {
+    configArray.push({
+      plugins: {'jsx-plus': jsxPlusPlugin},
+      rules: jsxPlusPlugin.configs.recommended.rules
+    })
+  }
+
   return [
     ignoreConfig,
     ...tsconfig.config({
       files: options?.files ?? ['**/*.{ts,tsx,js,jsx}'],
       extends: configArray,
     }),
-    options?.prettier !== false ? prettierConfig : {},
+    prettier ? prettierConfig : {},
   ].filter(Boolean);
 }
 

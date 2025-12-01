@@ -4,14 +4,13 @@
   "type": "module",
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
-    "@ice/pkg": "^1.6.0",
+    "@ice/pkg": "2.0.0-alpha.0",
     "@ice/spec": "workspace:*",
     "eslint": "^9.0.0",
     "husky": "^9.1.6",
-    "ice-npm-utils": "^2.0.1",
     "lint-staged": "^15.2.10",
     "prettier": "^3.0.0",
-    "stylelint": "^16.0.0",
+    "stylelint": "^16.25.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.4"
   },
@@ -19,14 +18,12 @@
     "build": "pnpm run -r build",
     "prepare": "husky",
     "lint": "eslint ./",
-    "prettier": "prettier **/* --write",
     "test": "vitest run"
   },
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.15.9",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "eslint --fix"
     ],
     "*.{json,md,css,scss,less}": [
       "prettier --write"

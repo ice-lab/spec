@@ -1,4 +1,4 @@
 // commitlint config for common project
-module.exports = {
+export default {
   extends: 'ali',
 };

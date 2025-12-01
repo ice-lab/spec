@@ -1,6 +1,6 @@
 {
   "name": "@ice/spec",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in ice project.",
   "type": "module",
   "main": "./es2017/index.js",
@@ -8,7 +8,8 @@
     ".": "./es2017/index.js",
     "./eslint": "./es2017/eslint/index.js",
     "./prettier": "./es2017/prettier/index.js",
-    "./stylelint": "./es2017/stylelint/index.js"
+    "./stylelint": "./es2017/stylelint/index.js",
+    "./commitlint": "./es2017/commitlint/index.js"
   },
   "files": [
     "esm",
@@ -30,16 +31,13 @@
   },
   "homepage": "https://github.com/ice-lab/spec#readme",
   "peerDependencies": {
-    "eslint": "^8.0.0 || ^9.0.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-jsx-plus": "^0.1.0",
-    "stylelint": "^16.0.0"
+    "eslint": "^8.21.0 || ^9.0.0",
+    "stylelint": "^16.25.0"
   },
   "dependencies": {
     "@eslint/js": "^9.9.0",
     "@swc/helpers": "^0.5.15",
-    "commitlint-config-ali": "^0.1.0",
-    "eslint-config-prettier": "^10.0.0",
+    "commitlint-config-ali": "^1.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
     "eslint-plugin-prettier": "^5.2.5",
@@ -47,11 +45,10 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "postcss-less": "^6.0.0",
     "postcss-scss": "^4.0.9",
+    "stylelint-config-recommended": "^17.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0",
     "stylelint-less": "^3.0.1",
     "stylelint-scss": "^6.0.0",
     "typescript-eslint": "^8.20.0"
-  },
-  "devDependencies": {
-    "@types/eslint-config-prettier": "^6.11.3"
   }
 }

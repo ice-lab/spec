@@ -5,10 +5,11 @@ export const config: Options = {
   tabWidth: 2,
   semi: true,
   singleQuote: true,
-  trailingComma: 'all',
+  trailingComma: 'es5',
 };
 
-export interface PrettierConfigOptions {}
+export interface PrettierConfigOptions {
+}
 
 export function getConfig(options?: PrettierConfigOptions) {
   return {

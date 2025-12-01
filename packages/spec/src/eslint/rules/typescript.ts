@@ -4,7 +4,6 @@ import tslint from 'typescript-eslint';
 export const typescriptRecommendConfig = tslint.config(...tslint.configs.recommended, {
   name: '@ice/spec/eslint/typescript/recommend',
   rules: {
-    '@typescript-eslint/no-empty-object-type': 'off',
 
     /**
      * 【强制】将重载的函数写在一起以增加代码可读性
@@ -13,24 +12,29 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     '@typescript-eslint/adjacent-overload-signatures': 'error',
 
     /**
+     * 【关闭】要求使用模板字面量而不是字符串连接
+     */
+    '@typescript-eslint/prefer-template': 'off',
+
+    /**
+     * 【关闭】禁止空的构造函数
+     */
+    '@typescript-eslint/no-useless-empty-export': 'off',
+
+    /**
      * 【推荐】简单类型请使用 T[] 或 readonly T[]
      * 对于所有其他类型（联合类型，交集类型，对象类型，函数类型等），请使用 Array<T> 或 ReadonlyArray<T>
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/array-type.md
      */
     '@typescript-eslint/array-type': ['warn', { default: 'array-simple' }],
 
-    /**
-     * 【关闭】禁止对没有 then 方法的对象使用 await
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/await-thenable.md
-     */
-    '@typescript-eslint/await-thenable': 'off',
 
     /**
-     * 【推荐】使用 @ts-expect-error/@ts-ignore/@ts-nocheck/@ts-check 等指令时需跟随注释描述
+     * 【强制】使用 @ts-expect-error/@ts-ignore/@ts-nocheck/@ts-check 等指令时需跟随注释描述
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/ban-ts-comment.md
      */
     '@typescript-eslint/ban-ts-comment': [
-      'warn',
+      'error',
       {
         'ts-expect-error': 'allow-with-description',
         'ts-ignore': 'allow-with-description',
@@ -53,26 +57,10 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     '@typescript-eslint/ban-types': 'off',
 
     /**
-     * 【强制】大括号换行风格：one true brace style 风格，且单行代码块可不换行
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md
-     * @extend
-     */
-    'brace-style': 'off',
-    '@typescript-eslint/brace-style': ['error', '1tbs', { allowSingleLine: true }],
-
-    /**
      * 【推荐】类的属性如果是字面量，则必须是只读属性而不能用 getter
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/class-literal-property-style.md
      */
     '@typescript-eslint/class-literal-property-style': ['warn', 'fields'],
-
-    /**
-     * 【强制】逗号的前面无空格，后面有空格
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md
-     * @extend
-     */
-    'comma-spacing': 'off',
-    '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
 
     /**
      * 【强制】类型断言必须使用 as Type 而非 <T> 容易与 JSX 语法混淆.
@@ -121,61 +109,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     /**
-     * 【强制】函数名与调用它的括号间无空格
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
-     */
-    'func-call-spacing': 'off',
-    '@typescript-eslint/func-call-spacing': ['error', 'never'],
-
-    /**
-     * 【强制】缩进为两个空格
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
-     */
-    indent: 'off',
-    '@typescript-eslint/indent': [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-        VariableDeclarator: 1,
-        outerIIFEBody: 1,
-        // MemberExpression: null,
-        FunctionDeclaration: {
-          parameters: 1,
-          body: 1,
-        },
-        FunctionExpression: {
-          parameters: 1,
-          body: 1,
-        },
-        CallExpression: {
-          arguments: 1,
-        },
-        ArrayExpression: 1,
-        ObjectExpression: 1,
-        ImportDeclaration: 1,
-        flatTernaryExpressions: false,
-        // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
-        ignoredNodes: [
-          'JSXElement',
-          'JSXElement > *',
-          'JSXAttribute',
-          'JSXIdentifier',
-          'JSXNamespacedName',
-          'JSXMemberExpression',
-          'JSXSpreadAttribute',
-          'JSXExpressionContainer',
-          'JSXOpeningElement',
-          'JSXClosingElement',
-          'JSXText',
-          'JSXEmptyExpression',
-          'JSXSpreadChild',
-        ],
-        ignoreComments: false,
-      },
-    ],
-
-    /**
      * 【关闭】变量必须在定义的时候赋值
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/init-declarations.md
      * @extend
@@ -184,37 +117,12 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     '@typescript-eslint/init-declarations': 'off',
 
     /**
-     * 【强制】关键字前后有一个空格
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md
-     * @extend
-     */
-    'keyword-spacing': 'off',
-    '@typescript-eslint/keyword-spacing': [
-      'error',
-      {
-        before: true,
-        after: true,
-        overrides: {
-          return: { after: true },
-          throw: { after: true },
-          case: { after: true },
-        },
-      },
-    ],
-
-    /**
      * 【关闭】类成员之间保留一个空行
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md
      * @extend
      */
     'lines-between-class-members': 'off',
     '@typescript-eslint/lines-between-class-members': 'off',
-
-    /**
-     * 【强制】interface/type 类型中保持一致的成员分隔符分号「;」，单行类型的最后一个元素不加分号
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md
-     */
-    '@typescript-eslint/member-delimiter-style': 'error',
 
     /**
      * 【推荐】类成员的遵循一定的排序规则
@@ -270,7 +178,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md
      */
     camelcase: 'off',
-    '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/naming-convention': 'off',
 
     /**
@@ -281,31 +188,9 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     'no-array-constructor': 'off',
     '@typescript-eslint/no-array-constructor': 'error',
 
-    /**
-     * 【关闭】限制 toString 方法的使用
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-base-to-string.md
-     */
-    '@typescript-eslint/no-base-to-string': 'off',
 
-    /**
-     * 【推荐】禁止使用容易混淆的非空断言
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md
-     */
-    '@typescript-eslint/no-confusing-non-null-assertion': 'warn',
 
-    /**
-     * 【强制】避免重复的类成员命名
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md
-     * @extend
-     */
-    'no-dupe-class-members': 'off',
-    '@typescript-eslint/no-dupe-class-members': 'error',
 
-    /**
-     * 【关闭】delete 时传入的 key 必须是静态的字面量
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dynamic-delete.md
-     */
-    '@typescript-eslint/no-dynamic-delete': 'off',
 
     /**
      * 【强制】禁止出现空函数，普通函数（非 async/await/generator）、箭头函数、类上的方法除外
@@ -332,11 +217,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      */
     '@typescript-eslint/no-explicit-any': 'warn',
 
-    /**
-     * 【关闭】禁止多余的 non-null 断言
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-non-null-assertion.md
-     */
-    '@typescript-eslint/no-extra-non-null-assertion': 'off',
 
     /**
      * 【关闭】禁止不必要的小括号
@@ -345,43 +225,8 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     'no-extra-parens': 'off',
     '@typescript-eslint/no-extra-parens': 'off',
 
-    /**
-     * 【强制】禁止不必要的分号
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-semi.md
-     * @extend
-     */
-    'no-extra-semi': 'off',
-    '@typescript-eslint/no-extra-semi': 'error',
 
-    /**
-     * 【关闭】禁止定义没必要的类，比如只有静态方法的类
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extraneous-class.md
-     */
-    '@typescript-eslint/no-extraneous-class': 'off',
 
-    /**
-     * 【关闭】禁止调用 Promise 时没有处理异常情况
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
-     */
-    '@typescript-eslint/no-floating-promises': 'off',
-
-    /**
-     * 【关闭】禁止对 array 使用 for in 循环
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-for-in-array.md
-     */
-    '@typescript-eslint/no-for-in-array': 'off',
-
-    /**
-     * 【关闭】禁止使用 eval
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md
-     */
-    '@typescript-eslint/no-implied-eval': 'off',
-
-    /**
-     * 【推荐】禁止给一个初始化时直接赋值为 number, string 的变量显式的声明类型
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-inferrable-types.md
-     */
-    '@typescript-eslint/no-inferrable-types': 'warn',
 
     /**
      * 【关闭】禁止在 class 外使用 this
@@ -389,13 +234,7 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      * @extend
      */
     'no-invalid-this': 'off',
-    '@typescript-eslint/no-invalid-this': 'off',
 
-    /**
-     * 【强制】禁止使用无意义的 void 类型，void 只能用在函数的返回值中
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-void-type.md
-     */
-    '@typescript-eslint/no-invalid-void-type': 'error',
 
     // @typescript-eslint/no-loss-of-precision needs eslint version >= v7
 
@@ -406,15 +245,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     'no-magic-numbers': 'off',
     '@typescript-eslint/no-magic-numbers': 'off',
 
-    /**
-     * 【关闭】禁止在接口中定义 constructor，或在类中定义 new
-     */
-    '@typescript-eslint/no-misused-new': 'off',
-
-    /**
-     * 【关闭】避免错误的使用 Promise
-     */
-    '@typescript-eslint/no-misused-promises': 'off',
 
     /**
      * 【强制】禁止使用 namespace 来定义命名空间，但允许使用 declare namespace 定义外部命名空间
@@ -428,96 +258,20 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     ],
 
     /**
-     * 【推荐】前端领域内，通常需要强制使用 ?. 来保证服务端下发的数据的正确性，暂时允许此类防御性规则
-     */
-    '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
-
-    /**
-     * 【关闭】禁止使用 non-null 断言（感叹号）
-     */
-    '@typescript-eslint/no-non-null-assertion': 'off',
-
-    /**
-     * 【关闭】禁止给类的构造函数的参数添加修饰符
-     */
-    '@typescript-eslint/no-parameter-properties': 'off',
-
-    /**
      * 【推荐】不建议使用 require 引入模块，使用 import
      */
-    '@typescript-eslint/no-require-imports': 'warn',
+    '@typescript-eslint/no-require-imports': 'error',
 
-    /**
-     * @extend
-     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md
-     */
-    'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': 'warn',
 
     /**
      * 【推荐】不建议将 this 赋值给其他变量，解构赋值除外
      */
     '@typescript-eslint/no-this-alias': [
-      'warn',
+      'error',
       {
         allowDestructuring: true,
       },
     ],
-
-    /**
-     * 【关闭】禁止 throw 字面量，必须 throw 一个 Error 对象
-     */
-    '@typescript-eslint/no-throw-literal': 'off',
-
-    /**
-     * 【关闭】禁止使用类型别名
-     */
-    '@typescript-eslint/no-type-alias': 'off',
-
-    /**
-     * 【关闭】测试表达式中的布尔类型禁止与 true 或 false 直接比较
-     */
-    '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
-
-    /**
-     * 【关闭】条件表达式禁止是永远为真（或永远为假）的
-     */
-    '@typescript-eslint/no-unnecessary-condition': 'off',
-
-    /**
-     * 【关闭】在命名空间中，可以直接使用内部变量，不需要添加命名空间前缀
-     */
-    '@typescript-eslint/no-unnecessary-qualifier': 'off',
-
-    /**
-     * 【关闭】禁止范型的类型有默认值时，将范型设置为该默认值
-     */
-    '@typescript-eslint/no-unnecessary-type-arguments': 'off',
-
-    /**
-     * 【关闭】禁止无用的类型断言
-     */
-    '@typescript-eslint/no-unnecessary-type-assertion': 'off',
-
-    /**
-     * 【关闭】禁止将变量或属性的类型设置为 any
-     */
-    '@typescript-eslint/no-unsafe-assignment': 'off',
-
-    /**
-     * 【关闭】禁止调用 any 类型的变量上的方法
-     */
-    '@typescript-eslint/no-unsafe-call': 'off',
-
-    /**
-     * 【关闭】禁止获取 any 类型的变量中的属性
-     */
-    '@typescript-eslint/no-unsafe-member-access': 'off',
-
-    /**
-     * 【关闭】禁止函数的返回值的类型是 any
-     */
-    '@typescript-eslint/no-unsafe-return': 'off',
 
     /**
      * 【强制】禁止无用的表达式
@@ -530,6 +284,8 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
         allowShortCircuit: true,
         allowTernary: true,
         allowTaggedTemplates: true,
+        // enforceForJSX: true,
+        // ignoreDirectives: true
       },
     ],
 
@@ -552,11 +308,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     ],
 
     /**
-     * 【关闭】禁止已定义的变量未使用
-     */
-    '@typescript-eslint/no-unused-vars-experimental': 'off',
-
-    /**
      * 【强制】禁止在定义变量之前就使用它
      * @extend
      */
@@ -574,11 +325,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      * 【关闭】禁止使用 require 来引入模块，被 no-require-imports 规则包含
      */
     '@typescript-eslint/no-var-requires': 'off',
-
-    /**
-     * 【推荐】当设定当前值为当前类型时，推荐使用 as const 替代 as 'bar'
-     */
-    '@typescript-eslint/prefer-as-const': 'warn',
 
     /**
      * 【关闭】如果索引仅用于访问正在迭代的数组，则建议首选 for of 循环，而不是标准 for 循环
@@ -611,21 +357,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     '@typescript-eslint/prefer-optional-chain': 'off',
 
     /**
-     * 【关闭】私有变量如果没有在构造函数外被赋值，则必须设为 readonly
-     */
-    '@typescript-eslint/prefer-readonly': 'off',
-
-    /**
-     * 【关闭】函数的参数必须设置为 readonly
-     */
-    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
-
-    /**
-     * 【关闭】使用 reduce 方法时，必须传入范型，而不是对第二个参数使用 as
-     */
-    '@typescript-eslint/prefer-reduce-type-parameter': 'off',
-
-    /**
      * 【关闭】使用 RegExp#exec 而不是 String#match
      */
     '@typescript-eslint/prefer-regexp-exec': 'off',
@@ -646,22 +377,10 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     '@typescript-eslint/promise-function-async': 'off',
 
     /**
-     * 【关闭】ts 文件字符串字面量优先使用单引号
-     * prefer prettier
-     */
-    quotes: 'off',
-    '@typescript-eslint/quotes': 'off',
-
-    /**
      * 【关闭】async 函数中必须存在 await 语句
      */
     'require-await': 'off',
     '@typescript-eslint/require-await': 'off',
-
-    /**
-     * 【关闭】模版字符串中的变量类型必须是字符串
-     */
-    '@typescript-eslint/restrict-template-expressions': 'off',
 
     /**
      * 【强制】禁止在 return 语句里使用 await
@@ -669,37 +388,6 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
      */
     'no-return-await': 'off',
     '@typescript-eslint/return-await': 'off',
-
-    /**
-     * 【强制】添加分号
-     * @extend
-     */
-    semi: 'off',
-    '@typescript-eslint/semi': ['error', 'always'],
-
-    /**
-     * 【强制】命名函数的空格规则，遵循 JS 约定
-     * @extend
-     */
-    'space-before-function-paren': 'off',
-    '@typescript-eslint/space-before-function-paren': [
-      'error',
-      {
-        anonymous: 'always',
-        named: 'never',
-        asyncArrow: 'always',
-      },
-    ],
-
-    /**
-     * 【关闭】条件判断必须传入布尔值
-     */
-    '@typescript-eslint/strict-boolean-expressions': 'off',
-
-    /**
-     * 【关闭】使用联合类型作为 switch 的对象时，必须包含每一个类型的 case
-     */
-    '@typescript-eslint/switch-exhaustiveness-check': 'off',
 
     /**
      * 【强制】三斜杠导入语法已废弃，在非 dts 文件中禁止使用
@@ -714,9 +402,40 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     ],
 
     /**
-     * 【强制】定义类型时应正确添加空格
+     * 不允许重复申明
+     * no-redeclare 会导致 typescript 的函数重载报错，详见：
+     * https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redeclare.md
      */
-    '@typescript-eslint/type-annotation-spacing': 'error',
+    'no-redeclare': 'off',
+    '@typescript-eslint/no-redeclare': 'error',
+
+    /**
+     * 【推荐】禁止使用容易混淆的非空断言
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md
+     */
+    '@typescript-eslint/no-confusing-non-null-assertion': 'warn',
+
+    /**
+     * 【关闭】禁止在 class 外使用 this
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-this.md
+     * @extend
+     */
+    '@typescript-eslint/no-invalid-this': 'off',
+
+    /**
+     * 【关闭】禁止给类的构造函数的参数添加修饰符
+     */
+    '@typescript-eslint/no-parameter-properties': 'off',
+
+    /**
+     * 【关闭】禁止使用类型别名
+     */
+    '@typescript-eslint/no-type-alias': 'off',
+
+    /**
+     * 【关闭】禁止使用 arguments.callee
+     */
+    '@typescript-eslint/no-restricted-types': 'off',
 
     /**
      * 【强制】interface 和 type 定义时必须声明成员的类型
@@ -735,22 +454,77 @@ export const typescriptRecommendConfig = tslint.config(...tslint.configs.recomme
     ],
 
     /**
-     * 【关闭】方法调用时需要绑定到正确的 this 上
+     * 【推荐】不推荐直接写空对象，但在很多业务场景下，空对象的使用频率比较高，所以这里仅仅给予告警
+     * @link https://typescript-eslint.io/rules/no-empty-object-type
      */
-    '@typescript-eslint/unbound-method': 'off',
+    '@typescript-eslint/no-empty-object-type': 'warn',
 
     /**
-     * 【推荐】定义函数时，优先使用参数的联合类型而不是函数的类型重载
+     * 【推荐】禁止变量声明与外层作用域的变量同名
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md
      */
-    '@typescript-eslint/unified-signatures': 'warn',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'warn',
 
     /**
-     * 不允许重复申明
-     * no-redeclare 会导致 typescript 的函数重载报错，详见：
-     * https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-redeclare.md
+     * 【强制】禁止多余的 non-null 断言，非类型相关
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-non-null-assertion.md
      */
-    'no-redeclare': 'off',
-    '@typescript-eslint/no-redeclare': ['error'],
+    '@typescript-eslint/no-extra-non-null-assertion': 'error',
+
+    /**
+     * 【强制】禁止在接口中定义 constructor，或在类中定义 new
+     * @link https://typescript-eslint.io/rules/no-misused-new
+     */
+    '@typescript-eslint/no-misused-new': 'error',
+
+    /**
+     * 【自修复】禁止使用 Function 类型
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-wrapper-object-types.md
+     */
+    '@typescript-eslint/no-wrapper-object-types': 'warn',
+
+    /**
+     * 【强制】禁止使用无意义的 void 类型，void 只能用在函数的返回值中
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-invalid-void-type.md
+     */
+    '@typescript-eslint/no-invalid-void-type': 'error',
+
+    /**
+     * 【强制】禁止不安全的声明合并
+     * @link https://typescript-eslint.io/rules/no-unsafe-declaration-merging
+     */
+    '@typescript-eslint/no-unsafe-declaration-merging': 'error',
+
+    /**
+     * 【自修复】前端领域内，通常需要强制使用 ?. 来保证服务端下发的数据的正确性，暂时允许此类防御性规则
+     * @link https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain
+     */
+    '@typescript-eslint/no-non-null-asserted-optional-chain': 'warn',
+
+    /**
+     * 【推荐】当设定当前值为当前类型时，推荐使用 as const 替代 as 'bar'
+     * @link https://typescript-eslint.io/rules/prefer-as-const
+     */
+    '@typescript-eslint/prefer-as-const': 'error',
+
+    /**
+     * 【强制】禁止重复的枚举成员值
+     * @link https://typescript-eslint.io/rules/no-duplicate-enum-values
+     */
+    '@typescript-eslint/no-duplicate-enum-values': 'error',
+
+    /**
+     * 【关闭】禁止使用 non-null 断言（感叹号）
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-non-null-assertion
+     */
+    '@typescript-eslint/no-non-null-assertion': 'off',
+
+    /**
+     * 【推荐】禁止定义没必要的类，比如只有静态方法的类
+     * @link https://typescript-eslint.io/rules/no-extraneous-class
+     */
+    '@typescript-eslint/no-extraneous-class': 'warn',
   },
 }) as Linter.Config[];
 
@@ -779,5 +553,209 @@ export const typescriptTypeCheckedConfig = tslint.config(...tslint.configs.recom
      * 【推荐】使用 optional chaining 替代 &&，仅在开启类型检查启用
      */
     '@typescript-eslint/prefer-optional-chain': 'warn',
+
+    /**
+     * 【推荐】禁止在类型联合中使用冗余的类型组成部分
+     * @link https://typescript-eslint.io/rules/no-redundant-type-constituents
+     */
+    '@typescript-eslint/no-redundant-type-constituents': 'warn',
+
+    /**
+     * 【关闭】禁止调用 Promise 时没有处理异常情况
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-floating-promises.md
+     */
+    '@typescript-eslint/no-floating-promises': 'off',
+
+    /**
+     * 【关闭】禁止对 array 使用 for in 循环
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-for-in-array.md
+     */
+    '@typescript-eslint/no-for-in-array': 'off',
+
+    /**
+     * 【强制】避免错误的使用 Promise
+     */
+    '@typescript-eslint/no-misused-promises': 'error',
+
+    /**
+     * 【推荐】禁止无用的类型断言
+     */
+    '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
+
+    /**
+     * 【关闭】禁止不必要的类型参数
+     */
+    '@typescript-eslint/no-unnecessary-type-constraint': 'warn',
+
+    /**
+     * 【推荐】禁止将 any 类型的值传递给参数
+     * @link https://typescript-eslint.io/rules/no-unsafe-argument
+     */
+    '@typescript-eslint/no-unsafe-argument': 'warn',
+
+
+    /**
+     * 【关闭】禁止将变量或属性的类型设置为 any
+     */
+    '@typescript-eslint/no-unsafe-assignment': 'warn',
+
+
+    /**
+     * 【关闭】禁止调用 any 类型的变量上的方法
+     */
+    '@typescript-eslint/no-unsafe-call': 'warn',
+
+
+    /**
+     * 【关闭】禁止不安全的枚举比较
+     */
+    '@typescript-eslint/no-unsafe-enum-comparison': 'error',
+
+
+    /**
+     * 【关闭】禁止函数的返回值的类型是 any
+     */
+    '@typescript-eslint/no-unsafe-return': 'warn',
+
+
+    /**
+     * 【关闭】禁止在模块范围内使用 this
+     */
+    '@typescript-eslint/no-unsafe-unary-minus': 'warn',
+
+    /**
+     * 【关闭】禁止使用类似 eval() 的方法
+     */
+    "no-implied-eval": "off",
+    '@typescript-eslint/no-implied-eval': 'error',
+
+    /**
+     * 【推荐】只允许抛出 Error 对象和 ExtendsError的对象
+     * @link https://typescript-eslint.io/rules/only-throw-error
+     */
+    "no-throw-literal": "off",
+    '@typescript-eslint/only-throw-error': 'warn',
+
+    /**
+     * 【关闭】禁止获取 any 类型的变量中的属性
+     */
+    '@typescript-eslint/no-unsafe-member-access': 'warn',
+
+    /**
+     * 【关闭】模版字符串中的变量类型必须是字符串
+     */
+    '@typescript-eslint/restrict-template-expressions': 'warn',
+
+    /**
+     * 【推荐】禁止给一个初始化时直接赋值为 number, string 的变量显式的声明类型
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-inferrable-types.md
+     */
+    '@typescript-eslint/no-inferrable-types': 'warn',
+
+    /**
+     * 【推荐】禁止使用不安全的函数类型
+     * @link https://typescript-eslint.io/rules/no-unsafe-function-type
+     */
+    '@typescript-eslint/no-unsafe-function-type': 'warn',
+
+    /**
+     * 【推荐】定义函数时，优先使用参数的联合类型而不是函数的类型重载
+     * @link https://typescript-eslint.io/rules/unified-signatures
+     */
+    '@typescript-eslint/unified-signatures': 'warn',
+
+    /**
+     * 【推荐】禁止使用 delete 操作符删除数组元素，这将创建稀疏数组
+     * @link https://typescript-eslint.io/rules/no-array-delete
+     */
+    '@typescript-eslint/no-array-delete': 'warn',
+
+    /**
+     * 【关闭】禁止混合的参数顺序
+     */
+    '@typescript-eslint/no-mixed-enums': 'error',
+
+    /**
+     * 【关闭】禁止使用非空断言的 postfix 表达式
+     */
+    '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+
+    /**
+     * 【关闭】要求导入声明按字母顺序排列
+     */
+    '@typescript-eslint/sort-type-constituents': 'off',
+
+    /**
+     * 【关闭】要求 switch 语句有 default case
+     */
+    '@typescript-eslint/switch-exhaustiveness-check': 'off',
+
+
+    /**
+     * 【关闭】禁止对没有 then 方法的对象使用 await
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/await-thenable.md
+     */
+    '@typescript-eslint/await-thenable': 'off',
+
+    /**
+     * 【关闭】限制 toString 方法的使用
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-base-to-string.md
+     */
+    '@typescript-eslint/no-base-to-string': 'off',
+
+
+    /**
+     * 【关闭】delete 时传入的 key 必须是静态的字面量
+     * @link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dynamic-delete.md
+     */
+    '@typescript-eslint/no-dynamic-delete': 'off',
+
+    /**
+     * 【关闭】测试表达式中的布尔类型禁止与 true 或 false 直接比较
+     */
+    '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
+
+    /**
+     * 【关闭】条件表达式禁止是永远为真（或永远为假）的
+     */
+    '@typescript-eslint/no-unnecessary-condition': 'off',
+
+    /**
+     * 【关闭】在命名空间中，可以直接使用内部变量，不需要添加命名空间前缀
+     */
+    '@typescript-eslint/no-unnecessary-qualifier': 'off',
+
+    /**
+     * 【关闭】禁止范型的类型有默认值时，将范型设置为该默认值
+     */
+    '@typescript-eslint/no-unnecessary-type-arguments': 'off',
+
+
+    /**
+     * 【关闭】私有变量如果没有在构造函数外被赋值，则必须设为 readonly
+     */
+    '@typescript-eslint/prefer-readonly': 'off',
+
+    /**
+     * 【关闭】函数的参数必须设置为 readonly
+     */
+    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+
+    /**
+     * 【关闭】使用 reduce 方法时，必须传入范型，而不是对第二个参数使用 as
+     */
+    '@typescript-eslint/prefer-reduce-type-parameter': 'off',
+
+    /**
+     * 【关闭】条件判断必须传入布尔值
+     */
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+
+
+    /**
+     * 【关闭】方法调用时需要绑定到正确的 this 上
+     */
+    '@typescript-eslint/unbound-method': 'off',
+
   },
 }) as Linter.Config[];

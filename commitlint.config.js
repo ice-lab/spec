@@ -1,4 +1,3 @@
-// const { getCommitlintConfig } = require('./packages/spec/src/');
-//
-// module.exports = getCommitlintConfig('react');
-export default {};
+import { getConfig } from '@ice/spec/commitlint'
+
+export default getConfig();
