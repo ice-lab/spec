@@ -1,6 +1,6 @@
 {
   "name": "@ice/spec",
-  "version": "2.0.0-beta.4",
+  "version": "2.0.0-beta.5",
   "description": "Easy to use eslint/stylelint/prettier/commitlint in ice project.",
   "type": "module",
   "main": "./es2017/index.js",
@@ -33,6 +33,14 @@
   "peerDependencies": {
     "eslint": "^8.21.0 || ^9.0.0",
     "stylelint": "^16.25.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "stylelint": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@eslint/js": "^9.9.0",
