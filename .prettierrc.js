@@ -1,3 +1,3 @@
-const { getPrettierConfig } = require('./packages/spec/src/');
+import { config } from '@ice/spec/prettier';
 
-module.exports = getPrettierConfig('react');
+export default config;

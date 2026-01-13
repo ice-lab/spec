@@ -1,47 +1,47 @@
-# @iceworks/spec
+# @ice/spec
 
-Easy to use **eslint**(support TypeScript) / **stylelint** / **prettier** / **commitlint** in [rax](https://rax.js.org/), [ice](https://ice.work/) and react project. And spec means specification.
+> `@iceworks/spec` is not maintained anymore and rename it back to `@ice/spec`.
+> You can switch branch to [`iceworks-legacy`]() for view `@iceworks/spec`.
+
+Easy to use **eslint**(support TypeScript) / **stylelint** / **prettier** / **commitlint** in [ice](https://v3.ice.work/) and react project. And spec means specification.
 
 ## Install
 
 ```bash
-$ npm i --save-dev @iceworks/spec eslint stylelint prettier @commitlint/cli
+$ npm i -D @ice/spec eslint stylelint prettier @commitlint/cli
 ```
 
-PS: You don't need to install other eslint plugins and parsers.
+You don't need to install other eslint plugins and parsers.
 
 ## Usage
 
 ### ESLint
 
+> From `2.0.0`, we only support flat config in eslint.
+
 #### 1. Create configuration file
 
-First create a `.eslintrc.js` file. Then edit your config.
+First create a `esling.config.mjs` file. Then edit your config.
 
 #### 2. Update config
 
-##### JavaScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
+For `ice` project:
 
-[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/eslint/react.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
+```javascript
+import eslint from '@ice/spec/eslint';
 
-```js
-// .eslintrc.js
-const { getESLintConfig } = require('@iceworks/spec');
-
-// getESLintConfig(rule: 'common'|'rax'|'react'|'vue' , customConfig?);
-module.exports = getESLintConfig('common');
+export default eslint.getConfig({
+  preset: 'ice',
+});
 ```
 
-##### TypeScript + [rax](https://rax.js.org/), [ice](https://ice.work/) and react
+For `@ice/pkg` project:
 
-[rules](https://github.com/ice-lab/spec/tree/master/packages/spec/src/eslint/react-ts.js) base on [eslint-config-ali](https://www.npmjs.com/package/eslint-config-ali) and [@iceworks/eslint-plugin-best-practices](https://www.npmjs.com/package/@iceworks/eslint-plugin-best-practices).
-
-```js
-// .eslintrc.js
-const { getESLintConfig } = require('@iceworks/spec');
-
-// getESLintConfig(rule: 'common-ts'|'rax-ts'|'react-ts'|'vue-ts', customConfig?);
-module.exports = getESLintConfig('common-ts');
+```javascript
+import eslint from '@ice/spec/eslint';
+export default eslint.getConfig({
+  preset: 'ice-pkg',
+});
 ```
 
 ### stylelint
@@ -56,7 +56,7 @@ First create a `.stylelintrc.js` file. Then edit your config.
 
 ```js
 // .stylelintrc.js
-const { getStylelintConfig } = require('@iceworks/spec');
+const { getStylelintConfig } = require('@ice/spec/stylelint');
 
 // getStylelintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getStylelintConfig('react');
@@ -72,10 +72,9 @@ First create a `.prettierrc.js` file. Then edit your config.
 
 ```js
 // .prettierrc.js
-const { getPrettierConfig } = require('@iceworks/spec');
+import { config } from '@ice/spec/prettier';
 
-// getPrettierConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
-module.exports = getPrettierConfig('react');
+export default config;
 ```
 
 ### commitlint
@@ -90,7 +89,7 @@ First create a `.commitlintrc.js` file. Then edit your config.
 
 ```js
 // .commitlintrc.js
-const { getCommitlintConfig } = require('@iceworks/spec');
+const { getCommitlintConfig } = require('@ice/spec/commitlint');
 
 // getCommitlintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
 module.exports = getCommitlintConfig('react');
@@ -98,31 +97,18 @@ module.exports = getCommitlintConfig('react');
 
 ## FAQ
 
-### Custom config
-
-```js
-// .eslintrc.js
-const { getESLintConfig } = require('@iceworks/spec');
-
-// getESLintConfig(rule: 'common'|'rax'|'react'|'vue', customConfig?);
-module.exports = getESLintConfig('rax', {
-  // custom config it will merge into main config
-  rules: {
-    // ...
-  },
-});
-```
-
 ### package.json scripts
 
 Add `scripts` in your `package.json`, example:
 
 ```json
-"scripts": {
-  "lint": "npm run eslint && npm run stylelint",
-  "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
-  "stylelint": "stylelint ./**/*.scss",
-  "prettier": "prettier **/* --write"
+{
+  "scripts": {
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "stylelint": "stylelint ./**/*.scss",
+    "prettier": "prettier **/* --write"
+  }
 }
 ```
 
@@ -142,22 +128,16 @@ If you are using [@ice/spec](https://www.npmjs.com/package/@ice/spec) in your pr
 
 Based on `@iceworks/spec`'s simple API you can quickly migrate your project, install and update your lint config file, the mission is completed 😁.
 
-### Error: Cannot find module 'eslint-plugin-foo'
-
-Eslint is not yet supported having plugins as dependencies in shareable config. [issue](https://github.com/eslint/eslint/issues/3458). As a temporary solution, you need add the plugin to devDependencies in your project, like `npm i --save-dev eslint-plugin-jsx-a11y`.
-
-### Error: The file does not match your project config
-
-TypeScript project run lint file when see this error, you can update your `tsconfig.json`.
-
-update `src/*` to `src/**/*`:
-
-```json
-{
-  "include": ["src/**/*"]
-}
-```
-
 [CHANGELOG](https://github.com/ice-lab/spec/blob/master/CHANGELOG.md)
 
 Enjoy!
+
+### What the relation between linter and formatter
+
+Linter is a tool that checks your code for potential errors.
+Formatter is a tool that just formats your code.
+
+In `@ice/spec`, We use eslint as linter and prettier as formatter.
+We think it's a good choice compare with that only using eslint as linter and formatter.
+
+And we choose eslint as the entry of linter and formatter.

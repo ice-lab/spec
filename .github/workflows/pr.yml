@@ -1,0 +1,23 @@
+name: Pull Request Check
+
+on:
+  pull_request:
+
+jobs:
+  publish-pkg:
+    if: false # Temp disable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Setup
+        run: |
+          pnpm i
+          pnpm run build
+      - name: pkg.new
+        run: pnpx pkg-pr-new publish './packages/*'

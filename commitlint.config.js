@@ -1,3 +1,3 @@
-const { getCommitlintConfig } = require('./packages/spec/src/');
+import { getConfig } from '@ice/spec/commitlint'
 
-module.exports = getCommitlintConfig('react');
+export default getConfig();

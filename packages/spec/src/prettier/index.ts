@@ -1,0 +1,18 @@
+import type { Options } from 'prettier';
+
+export const config: Options = {
+  printWidth: 120,
+  tabWidth: 2,
+  semi: true,
+  singleQuote: true,
+  trailingComma: 'es5',
+};
+
+export interface PrettierConfigOptions {
+}
+
+export function getConfig(options?: PrettierConfigOptions) {
+  return {
+    ...config,
+  };
+}

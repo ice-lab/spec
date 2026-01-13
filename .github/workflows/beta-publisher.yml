@@ -1,15 +1,22 @@
-name: Auto Publisher
+name: Beta Publisher
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: choice
+        description: 'Tag'
+        required: true
+        options:
+          - rc
+          - beta
+          - alpha
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v4
@@ -17,10 +24,11 @@ jobs:
           node-version: 20
           cache: 'pnpm'
           registry-url: https://registry.npmjs.org/
-      - run: |
+      - name: Build and Run
+        run: |
           pnpm i
           pnpm run build
-          pnpm release
+          pnpm publish --tag ${{inputs.tag}} -r --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           REGISTRY: https://registry.npmjs.org

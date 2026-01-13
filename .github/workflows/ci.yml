@@ -11,10 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: npm i
-      - run: npm run ci
-      
+      - run: pnpm i
+      - run: pnpm build
+      - run: pnpm run lint
+      - run: pnpm run test

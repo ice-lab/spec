@@ -1,24 +1,23 @@
 {
-  "name": "@iceworks/spec",
-  "version": "1.6.0",
-  "description": "Easy to use eslint/stylelint/prettier/commitlint in rax, ice and react project.",
-  "main": "src/index.js",
+  "name": "@ice/spec",
+  "version": "2.0.0-beta.5",
+  "description": "Easy to use eslint/stylelint/prettier/commitlint in ice project.",
+  "type": "module",
+  "main": "./es2017/index.js",
+  "exports": {
+    ".": "./es2017/index.js",
+    "./eslint": "./es2017/eslint/index.js",
+    "./prettier": "./es2017/prettier/index.js",
+    "./stylelint": "./es2017/stylelint/index.js",
+    "./commitlint": "./es2017/commitlint/index.js"
+  },
   "files": [
-    "src"
+    "esm",
+    "es2017"
   ],
   "scripts": {
-    "eslint-common": "eslint --no-eslintrc -c .eslintrc.common.js --ext .js,.jsx ./examples/common/",
-    "eslint-common-ts": "eslint --no-eslintrc -c .eslintrc.common-ts.js --ext .ts,.tsx ./examples/common-ts/",
-    "eslint-rax": "eslint --no-eslintrc -c .eslintrc.rax.js --ext .js,.jsx ./examples/rax/",
-    "eslint-rax-ts": "eslint --no-eslintrc -c .eslintrc.rax-ts.js --ext .ts,.tsx ./examples/rax-ts/",
-    "eslint-react": "eslint --no-eslintrc -c .eslintrc.react.js --ext .js,.jsx ./examples/react/",
-    "eslint-react-ts": "eslint --no-eslintrc -c .eslintrc.react-ts.js --ext .ts,.tsx ./examples/react-ts/",
-    "eslint-vue": "eslint --no-eslintrc -c .eslintrc.vue.js --ext .vue ./examples/vue/",
-    "eslint-vue-ts": "eslint --no-eslintrc -c .eslintrc.vue-ts.js --ext .vue ./examples/vue-ts/",
-    "eslint-test": "npm run eslint-common && npm run eslint-common-ts && npm run eslint-rax && npm run eslint-rax-ts && npm run eslint-react && npm run eslint-react-ts && npm run eslint-vue && npm run eslint-vue-ts",
-    "stylelin-test": "stylelint ./**/*.{css,scss,vue}",
-    "test": "npm run eslint-test && npm run stylelin-test",
-    "prepublishOnly": "npm run test"
+    "build": "ice-pkg build",
+    "prepublishOnly": "pnpm run build"
   },
   "repository": {
     "type": "git",
@@ -32,38 +31,32 @@
   },
   "homepage": "https://github.com/ice-lab/spec#readme",
   "peerDependencies": {
-    "eslint": ">=7.5.0",
-    "stylelint": ">=8.3.0"
+    "eslint": "^8.21.0 || ^9.0.0",
+    "stylelint": "^16.25.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "stylelint": {
+      "optional": true
+    }
   },
   "dependencies": {
-    "@iceworks/eslint-plugin-best-practices": "^0.2.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/preset-react": "^7.16.0",
-    "commitlint-config-ali": "^0.1.0",
-    "eslint-config-ali": "^13.0.0",
-    "eslint-plugin-import": "^2.22.1",
+    "@eslint/js": "^9.9.0",
+    "@swc/helpers": "^0.5.15",
+    "commitlint-config-ali": "^1.0.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-plus": "^0.1.0",
-    "eslint-plugin-rax-compile-time-miniapp": "^1.0.0",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-vue": "^7.3.0",
-    "json5": "^2.2.0",
-    "require-all": "^3.0.0",
-    "stylelint-config-ali": "^0.3.4",
-    "stylelint-scss": "^3.18.0",
-    "vue-eslint-parser": "^7.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.22.0",
-    "jest": "^24.9.0",
-    "prettier": "^2.1.0",
-    "rax": "^1.1.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "stylelint": "^13.2.0",
-    "typescript": "^3.5.3"
+    "eslint-plugin-prettier": "^5.2.5",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "postcss-less": "^6.0.0",
+    "postcss-scss": "^4.0.9",
+    "stylelint-config-recommended": "^17.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0",
+    "stylelint-less": "^3.0.1",
+    "stylelint-scss": "^6.0.0",
+    "typescript-eslint": "^8.20.0"
   }
 }

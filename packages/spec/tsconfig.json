@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
     "module": "esNext",
-    "target": "es2015",
-    "outDir": "build",
-    "jsx": "preserve",
-    "jsxFactory": "createElement",
-    "moduleResolution": "node",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "strict": true,
+    "moduleResolution": "node16",
+    "allowSyntheticDefaultImports": true
   }
 }

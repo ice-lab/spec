@@ -8,16 +8,17 @@ es/
 lib/
 dist/
 build/
+esm/
+es2017/
 coverage/
 node_modules/
 examples/test
 .idea/
 .history/
-packages/**/lib/
-packages/**/dist/
-packages/**/build/
-packages/**/coverage/
-packages/**/node_modules/
+packages/*/lib/
+packages/*/dist/
+packages/*/build/
+packages/*/coverage/
 
 package-lock.json
 yarn.lock
